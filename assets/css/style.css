@@ -11454,7 +11454,8 @@ body.sal-disabled [data-sal|=flip] {
 ---------------------*/
 
 .logo img {
-    max-width: 120px;
+    width: 150px;
+    height: 100px;
 }
 
 .logo img.logo-white {
@@ -29212,6 +29213,7 @@ body.tmp-white-version.index-8 .tmp-contact-about-inner .info-box {
     position: relative;
     z-index: 1;
     overflow: hidden;
+    margin-top: 150px;
 }
 
 .footer-area .footer-bg-img {
@@ -29454,6 +29456,10 @@ body.tmp-white-version.index-8 .tmp-contact-about-inner .info-box {
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
+}
+
+.ft-link li a:hover{
+    cursor: pointer;
 }
 
 .contact-wrap .ft-link li {
