@@ -11458,6 +11458,11 @@ body.sal-disabled [data-sal|=flip] {
     height: 100px;
 }
 
+#mobile-logo{
+    width: 100px;
+    height: 100px;
+}
+
 .logo img.logo-white {
     display: none;
 }
@@ -12212,10 +12217,6 @@ header.header-full-width.header--sticky.sticky {
     align-items: center;
     justify-content: space-between;
     padding: 15px 0;
-}
-
-.tmp-popup-mobile-menu .header-top .logo a img {
-    max-height: 45px;
 }
 
 .tmp-popup-mobile-menu .header-top .close-menu .close-button {
