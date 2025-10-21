@@ -29951,6 +29951,7 @@ body.tmp-white-version .logo img.logo-white {
 
 body.tmp-white-version .logo img.logo-dark {
     display: none;
+    height: auto;
 }
 
 body.tmp-white-version .tmp-contact-about-inner,
