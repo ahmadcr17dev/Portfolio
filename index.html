@@ -1,1288 +1,614 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description">
-    <link rel="shortcut icon" type="image/x-icon" href="logo.png">
+    <title>Ahmad Mobeen - Web & VR Developer</title>
+    <meta name="description" content="Freelance Web Developer & Virtual Reality Developer Portfolio">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome (For Icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <title>Ahmad Mobeen - A freelance Web Developer & Virtual Reality Developer</title>
-    <!-- Bootstrap min css -->
-    <!-- <link rel="stylesheet" href="assets/css/vendor/fontawesome.css"> -->
-    <link rel="stylesheet" href="assets/css/plugins/swiper.css">
-    <link rel="stylesheet" href="assets/css/plugins/odometer.css">
-    <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <!-- custom css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366f1', // Indigo 500
+                        secondary: '#a855f7', // Purple 500
+                        dark: '#0f172a', // Slate 900
+                        card: '#1e293b', // Slate 800
+                        textGray: '#94a3b8', // Slate 400
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Animations */
+        .gradient-text {
+            background: linear-gradient(to right, #6366f1, #a855f7);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hide scrollbar for clean look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
 
-<body>
-    <!-- tpm-header-area start -->
-    <header class="tmp-header-area-start header-one header--sticky header--transparent">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="header-content">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img class="logo-dark" src="logo.png"
-                                    alt="Ahmad Mobeen - A freelance Web Developer & Virtual Reality Developer" />
-                            </a>
-                        </div>
-                        <div class="tmp-header-right">
-                            <div class="social-share-wrapper d-none d-md-block">
-                                <div class="social-link">
-                                    <a href="https://www.instagram.com/im__ahmaadd?igsh=MWFzYTVscG14ZTh1aw=="
-                                        target="_blank">
-                                        <i class="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/ahmadmobeen?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-                                        <i class="fa-brands fa-linkedin-in"></i>
-                                    </a>
-                                    <a href="https://github.com/ahmadcr17dev" target="_blank">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                    <a href="https://www.facebook.com/share/17TCs7ZrGD/" target="_blank">
-                                        <i class="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="actions-area">
-                                <div class="tmp-side-collups-area d-none d-xl-block">
-                                    <button class="tmp-menu-bars tmp_button_active">
-                                        <i class="fa-solid fa-bars-staggered"></i>
-                                    </button>
-                                </div>
-                                <div class="tmp-side-collups-area d-block d-xl-none">
-                                    <button class="tmp-menu-bars humberger_menu_active">
-                                        <i class="fa fa-bars"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<body class="bg-dark text-slate-300 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 start-0 border-b border-slate-800 bg-dark/80 backdrop-blur-md">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-2xl font-bold whitespace-nowrap text-white">Ahmad<span
+                        class="text-primary">.</span></span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-slate-400 rounded-lg md:hidden hover:bg-slate-800 focus:outline-none">
+                <span class="sr-only">Open main menu</span>
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+
+            <!-- Desktop Menu -->
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul
+                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-slate-700 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+                    <li><a href="#home"
+                            class="block py-2 px-3 text-white bg-primary rounded md:bg-transparent md:text-primary md:p-0">Home</a>
+                    </li>
+                    <li><a href="#services"
+                            class="block py-2 px-3 text-slate-300 hover:text-white md:p-0 transition">Services</a></li>
+                    <li><a href="#portfolio"
+                            class="block py-2 px-3 text-slate-300 hover:text-white md:p-0 transition">Portfolio</a></li>
+                    <li><a href="#contact"
+                            class="block py-2 px-3 text-slate-300 hover:text-white md:p-0 transition">Contact</a></li>
+                </ul>
             </div>
         </div>
-    </header>
-    <!-- tpm-header-area end -->
+    </nav>
 
-    <div class="d-none d-xl-block">
-        <div class="tmp-sidebar-area tmp_side_bar">
-            <div class="inner">
-                <div class="top-area">
-                    <a href="index.html" class="logo">
-                        <img class="logo-dark" src="logo.png"
-                            alt="Ahmad Mobeen - A freelance Web Developer & Virtual Reality Developer" />
-                    </a>
-                    <div class="close-icon-area">
-                        <button class="tmp-round-action-btn close_side_menu_active">
-                            <i class="fa-regular fa-circle-xmark"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="content-wrapper">
-                    <div class="image-area-feature">
-                        <a href="index.html">
-                            <img src="assets/images/logo/man.png" alt="personal-logo">
-                        </a>
-                    </div>
-                    <h5 class="title mt--30">
-                        Freelancer delivering exceptional Web Development, WordPress, and VR solutions.
-                    </h5>
-                    <p class="disc">
-                        I am a skilled freelancer specializing in web development, WordPress customization, and virtual
-                        reality experiences. I create dynamic, user-focused, and visually engaging digital solutions
-                        tailored to client needs.
-                    </p>
-                    <div class="short-contact-area">
-                        <!-- single contact information -->
-                        <div class="single-contact">
-                            <i class="fa-solid fa-phone"></i>
-                            <div class="information tmp-link-animation">
-                                <span>Call Now</span>
-                                <a href="tel:+923226212707" class="number">+92 322 6212707</a>
-                            </div>
-                        </div>
-                        <!-- single contact information end -->
-
-                        <!-- single contact information -->
-                        <div class="single-contact">
-                            <i class="fa-solid fa-envelope"></i>
-                            <div class="information tmp-link-animation">
-                                <span>Mail Us</span>
-                                <a href="mailto:chaudaryahmad1041@gmail.com"
-                                    class="number">chaudaryahmad1041@gmail.com</a>
-                            </div>
-                        </div>
-                        <!-- single contact information end -->
-
-                        <!-- single contact information -->
-                        <div class="single-contact">
-                            <i class="fa-brands fa-github"></i>
-                            <div class="information tmp-link-animation">
-                                <span>My Github</span>
-                                <a href="https://github.com/ahmadcr17dev" target="_blank" class="number">My Github
-                                    Profile</a>
-                            </div>
-                        </div>
-                        <!-- single contact information end -->
-                    </div>
-                    <!-- social area start -->
-                    <div class="social-wrapper mt--20">
-                        <span class="subtitle">find with me</span>
-                        <div class="social-link">
-                            <a href="https://www.instagram.com/im__ahmaadd?igsh=MWFzYTVscG14ZTh1aw==" target="_blank">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/ahmadmobeen?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/ahmadcr17dev" target="_blank">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://www.facebook.com/share/17TCs7ZrGD/" target="_blank">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- social area end -->
-                </div>
-            </div>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+        <!-- Background Glow -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10">
         </div>
-        <a class="overlay_close_side_menu close_side_menu_active" href="javascript:void(0);"></a>
-    </div>
 
-    <div class="d-block d-xl-none">
-        <div class="tmp-popup-mobile-menu">
-            <div class="inner">
-                <div class="header-top">
-                    <div class="logo">
-                        <a href="index.html" class="logo-area">
-                            <img class="logo-dark" src="logo.png" id="mobile-logo"
-                                alt="Ahmad Mobeen - A freelance Web Developer & Virtual Reality Developer">
-                        </a>
-
-                    </div>
-                    <div class="close-menu">
-                        <button class="close-button tmp-round-action-btn">
-                            <i class="fa-sharp fa-solid fa-xmark"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="social-wrapper mt--40">
-                    <span class="subtitle">find with me</span>
-                    <div class="social-link">
-                        <a href="https://www.instagram.com/im__ahmaadd?igsh=MWFzYTVscG14ZTh1aw=="><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/ahmadmobeen?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://github.com/ahmadcr17dev"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.facebook.com/share/17TCs7ZrGD/"><i class="fa-brands fa-facebook-f"></i></a>
-                    </div>
-                </div>
-                <!-- social area end -->
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+            <span
+                class="bg-primary/10 text-primary border border-primary/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6 inline-block">
+                Available for Freelance
+            </span>
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+                I'm Ahmad Mobeen, a <br>
+                <span class="gradient-text">Web & VR Developer</span>
+            </h1>
+            <p class="mb-8 text-lg font-normal text-textGray lg:text-xl sm:px-16 lg:px-48 max-w-4xl mx-auto">
+                I specialize in building dynamic, user-focused digital solutions. From responsive websites to immersive
+                Virtual Reality experiences, I turn ideas into reality.
+            </p>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                <a href="#portfolio"
+                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-900 transition-all shadow-lg shadow-indigo-500/30">
+                    View My Work
+                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#contact"
+                    class="inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-slate-600 hover:bg-slate-800 focus:ring-4 focus:ring-slate-700 transition-all">
+                    Contact Me
+                </a>
             </div>
-        </div>
-    </div>
 
-    <!-- tmp banner area start -->
-    <div class="tmp-banner-one-area">
-        <div class="container">
-            <div class="banner-one-main-wrapper">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 order-lg-2">
-                        <div class="banner-right-content">
-                            <img class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                src="assets/images/banner/banner-user-image-one.png" alt="banner-img">
-                            <h2 class="banner-big-text-1 up-down">VR DEVELOPER</h2>
-                            <h2 class="banner-big-text-2 up-down-2">WEB DEVELOPER</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 order-lg-1">
-                        <div class="inner">
-                            <span class="sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">Hello</span>
-                            <h1 class="title tmp-scroll-trigger tmp-fade-in animation-order-2 mt--5">i’m Ahmad Mobeen a
-                                <br>
-                                <span class="header-caption">
-                                    <span class="cd-headline clip is-full-width">
-                                        <span class="cd-words-wrapper">
-                                            <b class="is-visible theme-gradient">Web Designer.</b>
-                                            <b class="is-hidden theme-gradient">Web Developer.</b>
-                                            <b class="is-hidden theme-gradient">UI/UX Designer.</b>
-                                            <b class="is-hidden theme-gradient">Freelancer.</b>
-                                            <b class="is-hidden theme-gradient">Virtual Reality Developer.</b>
-                                        </span>
-                                    </span>
-                                </span>
-                            </h1>
-                            <p class="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
-                                I am a skilled freelancer specializing in web development, WordPress customization, and
-                                virtual reality experiences. I create dynamic, user-focused, and visually engaging
-                                digital solutions tailored to client needs.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- tmp banner area end -->
-
-    <!-- Tpm Service Area Start -->
-    <section class="service-area tmp-section-gap">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="service-card-v1 tmp-scroll-trigger tmp-fade-in animation-order-1 tmp-link-animation">
-                        <div class="service-card-icon">
-                            <i class="fa-brands fa-node-js" style="color: #ff014f;"></i>
-                        </div>
-                        <h4 class="service-title">
-                            Web Developement
-                        </h4>
-                        <p class="service-para">
-                            50 Projects
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="service-card-v1 tmp-scroll-trigger tmp-fade-in animation-order-2 tmp-link-animation">
-                        <div class="service-card-icon">
-                            <i class="fa-brands fa-figma" style="color: #ff014f;"></i>
-                        </div>
-                        <h4 class="service-title">
-                            Ui/Ux Design
-                        </h4>
-                        <p class="service-para">
-                            25 Projects
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="service-card-v1 tmp-scroll-trigger tmp-fade-in animation-order-3 tmp-link-animation">
-                        <div class="service-card-icon">
-                            <i class="fa-brands fa-wordpress" style="color: #ff014f;"></i>
-                        </div>
-                        <h4 class="service-title">
-                            Wordpress
-                        </h4>
-                        <p class="service-para">
-                            50 Projects
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="service-card-v1 tmp-scroll-trigger tmp-fade-in animation-order-4 tmp-link-animation">
-                        <div class="service-card-icon">
-                            <i class="fa-solid fa-vr-cardboard" style="color: #ff014f;"></i>
-                        </div>
-                        <h4 class="service-title">
-                            Virtual Reality
-                        </h4>
-                        <p class="service-para">
-                            5 Projects
-                        </p>
-                    </div>
-                </div>
+            <!-- Social Links -->
+            <div class="mt-12 flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/ahmadmobeen" target="_blank"
+                    class="text-slate-400 hover:text-white transition transform hover:scale-110"><i
+                        class="fa-brands fa-linkedin text-2xl"></i></a>
+                <a href="https://github.com/ahmadcr17dev" target="_blank"
+                    class="text-slate-400 hover:text-white transition transform hover:scale-110"><i
+                        class="fa-brands fa-github text-2xl"></i></a>
+                <a href="https://www.instagram.com/im__ahmaadd" target="_blank"
+                    class="text-slate-400 hover:text-white transition transform hover:scale-110"><i
+                        class="fa-brands fa-instagram text-2xl"></i></a>
+                <a href="https://www.facebook.com/share/17TCs7ZrGD/" target="_blank"
+                    class="text-slate-400 hover:text-white transition transform hover:scale-110"><i
+                        class="fa-brands fa-facebook text-2xl"></i></a>
             </div>
         </div>
     </section>
-    <!-- Tpm Service Area End -->
 
-    <!-- Tpm Counter Area Start -->
-    <section class="counter-area">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-12 col-lg-6 col-xl-6 col-xxl-6">
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-dark">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div class="max-w-screen-md mb-8 lg:mb-16">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">My Expertise</h2>
+                <p class="text-textGray sm:text-xl">I offer a wide range of digital services tailored to your business
+                    needs.</p>
+            </div>
+            <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-12 md:space-y-0">
+
+                <!-- Service 1 -->
+                <div
+                    class="p-6 bg-card rounded-xl border border-slate-700 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 group">
                     <div
-                        class="year-of-expariance-wrapper bg-blur-style-one tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <div class="year-expariance-wrap">
-                            <h2 class="counter year-number">
-                                2+
-                            </h2>
-                            <h3 class="year-title">Years Of <br> experience</h3>
-                        </div>
-                        <p class="year-para">
-                            Delivering expert business consulting focused on optimizing performance, improving
-                            efficiency, and achieving growth.
-                        </p>
+                        class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                        <i class="fa-brands fa-node-js text-2xl text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-white">Web Development</h3>
+                    <p class="text-sm text-textGray">50+ Projects completed using modern technologies like React,
+                        Node.js, and Tailwind.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div
+                    class="p-6 bg-card rounded-xl border border-slate-700 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 group">
+                    <div
+                        class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                        <i class="fa-solid fa-vr-cardboard text-2xl text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-white">Virtual Reality</h3>
+                    <p class="text-sm text-textGray">Immersive VR experiences built with Unity and WebXR technologies.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div
+                    class="p-6 bg-card rounded-xl border border-slate-700 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 group">
+                    <div
+                        class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                        <i class="fa-brands fa-wordpress text-2xl text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-white">WordPress</h3>
+                    <p class="text-sm text-textGray">Custom themes and plugins to give your WordPress site a unique
+                        edge.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div
+                    class="p-6 bg-card rounded-xl border border-slate-700 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 group">
+                    <div
+                        class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                        <i class="fa-solid fa-pen-nib text-2xl text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-white">UI/UX Design</h3>
+                    <p class="text-sm text-textGray">Creating intuitive and visually appealing interfaces using Figma.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-dark">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div class="max-w-screen-md mb-8 lg:mb-16">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Featured Projects</h2>
+                <p class="text-textGray sm:text-xl">A selection of my recent work in web development and design.</p>
+            </div>
+            <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+
+                <!-- Project 1 -->
+                <div
+                    class="group bg-card rounded-xl overflow-hidden border border-slate-700 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10">
+                    <div class="h-48 bg-slate-700 w-full relative overflow-hidden">
+                        <img src="assets/images/freshbite.png" alt="FreshBite App"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="mb-2 text-xl font-bold text-white group-hover:text-primary transition-colors">
+                            FreshBite App</h3>
+                        <p class="mb-4 text-sm text-textGray">A food ordering application built with React.js.</p>
+                        <a href="https://ahmadcr17dev.github.io/freshbiteapp_Reactjs/" target="_blank"
+                            class="text-primary hover:text-white font-medium">View Project <i
+                                class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6 col-xl-6 col-xxl-6">
-                    <div class="counter-area-right-content">
-                        <div class="row g-5">
-                            <div class="col-lg-6 col-sm-6 col-12">
-                                <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <h3 class="counter counter-title"><span class="odometer" data-count="100"></span>
-                                    </h3>
-                                    <p class="counter-para">Projects Completed</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6 col-12">
-                                <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
-                                    <h3 class="counter counter-title"><span class="odometer" data-count="50"></span>
-                                    </h3>
-                                    <p class="counter-para">Ongoing Projects</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6 col-12">
-                                <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
-                                    <h3 class="counter counter-title"><span class="odometer" data-count="100">00</span>+
-                                    </h3>
-                                    <p class="counter-para">Clients Reviews</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6 col-12">
-                                <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-4">
-                                    <h3 class="counter counter-title"><span class="odometer" data-count="50">00</span>+
-                                    </h3>
-                                    <p class="counter-para">Satisfied Clients</p>
-                                </div>
-                            </div>
+
+                <!-- Project 2 -->
+                <div
+                    class="group bg-card rounded-xl overflow-hidden border border-slate-700 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10">
+                    <div class="h-48 bg-slate-700 w-full relative overflow-hidden">
+                        <img src="assets/images/urbanstich.png" alt="UrbanStich"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="mb-2 text-xl font-bold text-white group-hover:text-primary transition-colors">
+                            UrbanStich</h3>
+                        <p class="mb-4 text-sm text-textGray">E-commerce platform with MERN stack integration.</p>
+                        <a href="https://urban-stich-mern.vercel.app/" target="_blank"
+                            class="text-primary hover:text-white font-medium">View Project <i
+                                class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div
+                    class="group bg-card rounded-xl overflow-hidden border border-slate-700 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10">
+                    <div class="h-48 bg-slate-700 w-full relative overflow-hidden">
+                        <img src="assets/images/primeestate.png" alt="PrimeEstate"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="mb-2 text-xl font-bold text-white group-hover:text-primary transition-colors">
+                            PrimeEstate
+                        </h3>
+                        <p class="mb-4 text-sm text-textGray">Real Estate Agency website with modern layout.</p>
+                        <a href="https://primeestate.lovestoblog.com/ahmad/" target="_blank"
+                            class="text-primary hover:text-white font-medium">View Project <i
+                                class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div
+                    class="group bg-card rounded-xl overflow-hidden border border-slate-700 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10">
+                    <div class="h-48 bg-slate-700 w-full relative overflow-hidden">
+                        <img src="assets/images/kfc.png" alt="KFC App"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="mb-2 text-xl font-bold text-white group-hover:text-primary transition-colors">KFC
+                            Clone
+                        </h3>
+                        <p class="mb-4 text-sm text-textGray">Fast Food Ordering Website design.</p>
+                        <a href="https://kicksandfits.lovestoblog.com/" target="_blank"
+                            class="text-primary hover:text-white font-medium">View Project <i
+                                class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div
+                    class="group bg-card rounded-xl overflow-hidden border border-slate-700 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10">
+                    <div class="h-48 bg-slate-700 w-full relative overflow-hidden">
+                        <img src="assets/images/agency.png" alt="Agency Design"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="mb-2 text-xl font-bold text-white group-hover:text-primary transition-colors">Real
+                            Estate
+                            Agency</h3>
+                        <p class="mb-4 text-sm text-textGray">UI/UX Design concept for an agency.</p>
+                        <a href="https://dribbble.com/ahmad_designer1041" target="_blank"
+                            class="text-primary hover:text-white font-medium">View Design <i
+                                class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div
+                    class="group bg-card rounded-xl overflow-hidden border border-slate-700 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10">
+                    <div class="h-48 bg-slate-700 w-full relative overflow-hidden">
+                        <img src="assets/images/foodie.png" alt="Foodie App"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="mb-2 text-xl font-bold text-white group-hover:text-primary transition-colors">Foodie
+                            App
+                        </h3>
+                        <p class="mb-4 text-sm text-textGray">Mobile App Design for food ordering.</p>
+                        <a href="https://dribbble.com/ahmad_designer1041" target="_blank"
+                            class="text-primary hover:text-white font-medium">View Design <i
+                                class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience Section -->
+    <section class="py-24 bg-dark">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div class="max-w-screen-md mb-12 lg:mb-16">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Education & Experience</h2>
+                <p class="text-textGray sm:text-xl">My academic background and professional journey.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6 border-l-4 border-primary pl-4">Education</h3>
+                    <div class="space-y-6">
+                        <div class="bg-card p-6 rounded-lg border border-slate-700">
+                            <h4 class="text-lg font-bold text-white">KICSIT (Sub-Campus of IST)</h4>
+                            <p class="text-primary font-medium mb-2">2022 - 2026</p>
+                            <p class="text-sm text-textGray">Pursuing a degree focused on software development, web
+                                technologies, and problem-solving.</p>
+                        </div>
+                        <div class="bg-card p-6 rounded-lg border border-slate-700">
+                            <h4 class="text-lg font-bold text-white">Punjab Group of Colleges</h4>
+                            <p class="text-primary font-medium mb-2">2018 - 2021</p>
+                            <p class="text-sm text-textGray">Higher secondary education with a focus on biology,
+                                chemistry, and physics.</p>
+                        </div>
+                        <div class="bg-card p-6 rounded-lg border border-slate-700">
+                            <h4 class="text-lg font-bold text-white">Al-Huda Group of School</h4>
+                            <p class="text-primary font-medium mb-2">2016 - 2018</p>
+                            <p class="text-sm text-textGray">Secondary education with a focus on science, technology,
+                                and analytical skills.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6 border-l-4 border-primary pl-4">Experience</h3>
+                    <div class="space-y-6">
+                        <div class="bg-card p-6 rounded-lg border border-slate-700">
+                            <h4 class="text-lg font-bold text-white">Friend's Vision Academy</h4>
+                            <p class="text-primary font-medium mb-2">2024 - Present</p>
+                            <p class="text-sm text-textGray">MS Office & Web Developer. Delivering modern web solutions
+                                and professional training.</p>
+                        </div>
+                        <div class="bg-card p-6 rounded-lg border border-slate-700">
+                            <h4 class="text-lg font-bold text-white">Vibrantink Solution</h4>
+                            <p class="text-primary font-medium mb-2">2023 - Present</p>
+                            <p class="text-sm text-textGray">Web Developer. Contributed to designing and developing
+                                responsive, high-performance websites.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Tpm Counter Area End -->
 
-    <!-- tmp skill area start -->
-    <div class="tmp-skill-area tmp-section-gapTop">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <div class="progress-wrapper">
-                        <div class="content">
-                            <h2 class="custom-title mb--30 tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                Design & Development Skill
-                                <span>
-                                    <img src="assets/images/custom-line/custom-line.png" alt="custom-line" />
-                                </span>
-                            </h2>
-                            <!-- Start Single Progress Charts -->
-                            <div class="progress-charts">
-                                <h6 class="heading heading-h6">
-                                    React Js</h6>
-                                <div class="progress">
-                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.5s"
-                                        data-wow-delay=".3s" role="progressbar"
-                                        style="width: 90%; visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInLeft;"
-                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="90">
-                                        <span class="percent-label">90%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Progress Charts -->
-
-                            <!-- Start Single Progress Charts -->
-                            <div class="progress-charts">
-                                <h6 class="heading heading-h6">
-                                    Node Js</h6>
-                                <div class="progress">
-                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.6s"
-                                        data-wow-delay=".4s" role="progressbar"
-                                        style="width: 85%; visibility: visible; animation-duration: 0.6s; animation-delay: 0.4s; animation-name: fadeInLeft;"
-                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                        <span class="percent-label">85%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Progress Charts -->
-
-                            <!-- Start Single Progress Charts -->
-                            <div class="progress-charts">
-                                <h6 class="heading heading-h6">
-                                    Express Js</h6>
-                                <div class="progress">
-                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.7s"
-                                        data-wow-delay=".5s" role="progressbar"
-                                        style="width: 85%; visibility: visible; animation-duration: 0.7s; animation-delay: 0.5s; animation-name: fadeInLeft;"
-                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                        <span class="percent-label">85%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Progress Charts -->
-
-                            <!-- Start Single Progress Charts -->
-                            <div class="progress-charts">
-                                <h6 class="heading heading-h6">
-                                    Database</h6>
-                                <div class="progress">
-                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s"
-                                        data-wow-delay=".6s" role="progressbar"
-                                        style="width: 80%; visibility: visible; animation-duration: 0.8s; animation-delay: 0.6s; animation-name: fadeInLeft;"
-                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                        <span class="percent-label">80%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Progress Charts -->
-
-                            <!-- Start Single Progress Charts -->
-                            <div class="progress-charts">
-                                <h6 class="heading heading-h6">
-                                    Material UI</h6>
-                                <div class="progress">
-                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s"
-                                        data-wow-delay=".6s" role="progressbar"
-                                        style="width: 85%; visibility: visible; animation-duration: 0.8s; animation-delay: 0.6s; animation-name: fadeInLeft;"
-                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                        <span class="percent-label">85%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Progress Charts -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="progress-wrapper">
-                        <div class="content">
-                            <h2 class="custom-title mb--30 tmp-scroll-trigger tmp-fade-in animation-order-1"
-                                style="visibility: hidden;">
-                                Development Skill
-                                <span>
-                                    <img src="assets/images/custom-line/custom-line.png" alt="custom-line" />
-                                </span>
-                            </h2>
-                            <!-- Start Single Progress Charts -->
-                            <div class="progress-charts">
-                                <h6 class="heading heading-h6">
-                                    Wordpress</h6>
-                                <div class="progress">
-                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.5s"
-                                        data-wow-delay=".3s" role="progressbar"
-                                        style="width: 95%; visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInLeft;"
-                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                        <span class="percent-label">95%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Progress Charts -->
-
-                            <!-- Start Single Progress Charts -->
-                            <div class="progress-charts">
-                                <h6 class="heading heading-h6">
-                                    Tailwind CSS</h6>
-                                <div class="progress">
-                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.6s"
-                                        data-wow-delay=".4s" role="progressbar"
-                                        style="width: 90%; visibility: visible; animation-duration: 0.6s; animation-delay: 0.4s; animation-name: fadeInLeft;"
-                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                        <span class="percent-label">90%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Progress Charts -->
-
-                            <!-- Start Single Progress Charts -->
-                            <div class="progress-charts">
-                                <h6 class="heading heading-h6">
-                                    Unity</h6>
-                                <div class="progress">
-                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.7s"
-                                        data-wow-delay=".5s" role="progressbar"
-                                        style="width: 80%; visibility: visible; animation-duration: 0.7s; animation-delay: 0.5s; animation-name: fadeInLeft;"
-                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                        <span class="percent-label">80%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Progress Charts -->
-
-                            <!-- Start Single Progress Charts -->
-                            <div class="progress-charts">
-                                <h6 class="heading heading-h6">
-                                    Figma</h6>
-                                <div class="progress">
-                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s"
-                                        data-wow-delay=".6s" role="progressbar"
-                                        style="width: 75%; visibility: visible; animation-duration: 0.8s; animation-delay: 0.6s; animation-name: fadeInLeft;"
-                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                        <span class="percent-label">75%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Progress Charts -->
-
-                            <!-- Start Single Progress Charts -->
-                            <div class="progress-charts">
-                                <h6 class="heading heading-h6">
-                                    MS Office</h6>
-                                <div class="progress">
-                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s"
-                                        data-wow-delay=".6s" role="progressbar"
-                                        style="width: 95%; visibility: visible; animation-duration: 0.8s; animation-delay: 0.6s; animation-name: fadeInLeft;"
-                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                        <span class="percent-label">95%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Progress Charts -->
-                        </div>
-                    </div>
-                </div>
+    <!-- Skills Section -->
+    <section class="py-24 bg-dark">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div class="max-w-screen-md mb-12 lg:mb-16">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Technical Skills</h2>
+                <p class="text-textGray sm:text-xl">Tools and technologies I use to build products.</p>
             </div>
-        </div>
-    </div>
-    <!-- tmp skill area end -->
 
-    <!-- Tpm Latest Service Area Start -->
-    <section class="latest-service-area tmp-section-gapTop">
-        <div class="container">
-            <div class="section-head mb--50">
-                <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    <span class="subtitle">My Expertise</span>
-                </div>
-                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                    Crafting Digital Experiences <br /> That Inspire
-                </h2>
-                <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-                    Offered expert web and digital consulting services to help clients improve efficiency, brand
-                    visibility, and user experience.
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <h2 class="service-card-num"><span>01.</span>Wordpress Development</h2>
-                        <p class="service-para">
-                            Custom, SEO-friendly WordPress sites that elevate your online presence.
-                        </p>
-                    </div>
-                    <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
-                        <h2 class="service-card-num"><span>02.</span>Web Design & Development</h2>
-                        <p class="service-para">
-                            Modern, responsive, and user-focused websites built for performance.
-                        </p>
-                    </div>
-                    <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
-                        <h2 class="service-card-num"><span>03.</span>Virtual Reality Development</h2>
-                        <p class="service-para">
-                            Immersive and interactive virtual experiences that engage users.
-                        </p>
-                    </div>
-                    <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
-                        <h2 class="service-card-num"><span>04.</span>MS Office Solution</h2>
-                        <p class="service-para">
-                            Professional Office tools and training for smarter business workflows.
-                        </p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Skill Item -->
+                <div
+                    class="bg-card p-4 rounded-lg border border-slate-700 text-center hover:border-primary transition-colors">
+                    <i class="fa-brands fa-react text-3xl text-blue-400 mb-2"></i>
+                    <h4 class="text-white font-medium">React JS</h4>
+                    <div class="w-full bg-slate-700 h-1.5 rounded-full mt-2">
+                        <div class="bg-blue-400 h-1.5 rounded-full" style="width: 90%"></div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="service-card-user-image">
-                        <img class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                            src="assets/images/services/latest-services-user-image.png" alt="latest-user-image">
+                <!-- Skill Item -->
+                <div
+                    class="bg-card p-4 rounded-lg border border-slate-700 text-center hover:border-primary transition-colors">
+                    <i class="fa-brands fa-node text-3xl text-green-500 mb-2"></i>
+                    <h4 class="text-white font-medium">Node JS</h4>
+                    <div class="w-full bg-slate-700 h-1.5 rounded-full mt-2">
+                        <div class="bg-green-500 h-1.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                <!-- Skill Item -->
+                <div
+                    class="bg-card p-4 rounded-lg border border-slate-700 text-center hover:border-primary transition-colors">
+                    <i class="fa-brands fa-wordpress text-3xl text-blue-600 mb-2"></i>
+                    <h4 class="text-white font-medium">WordPress</h4>
+                    <div class="w-full bg-slate-700 h-1.5 rounded-full mt-2">
+                        <div class="bg-blue-600 h-1.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                <!-- Skill Item -->
+                <div
+                    class="bg-card p-4 rounded-lg border border-slate-700 text-center hover:border-primary transition-colors">
+                    <i class="fa-brands fa-figma text-3xl text-purple-500 mb-2"></i>
+                    <h4 class="text-white font-medium">Figma</h4>
+                    <div class="w-full bg-slate-700 h-1.5 rounded-full mt-2">
+                        <div class="bg-purple-500 h-1.5 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                <!-- Skill Item -->
+                <div
+                    class="bg-card p-4 rounded-lg border border-slate-700 text-center hover:border-primary transition-colors">
+                    <i class="fa-brands fa-html5 text-3xl text-orange-500 mb-2"></i>
+                    <h4 class="text-white font-medium">HTML5</h4>
+                    <div class="w-full bg-slate-700 h-1.5 rounded-full mt-2">
+                        <div class="bg-orange-500 h-1.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                <!-- Skill Item -->
+                <div
+                    class="bg-card p-4 rounded-lg border border-slate-700 text-center hover:border-primary transition-colors">
+                    <i class="fa-brands fa-css3-alt text-3xl text-blue-500 mb-2"></i>
+                    <h4 class="text-white font-medium">CSS3</h4>
+                    <div class="w-full bg-slate-700 h-1.5 rounded-full mt-2">
+                        <div class="bg-blue-500 h-1.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                <!-- Skill Item -->
+                <div
+                    class="bg-card p-4 rounded-lg border border-slate-700 text-center hover:border-primary transition-colors">
+                    <i class="fa-brands fa-js text-3xl text-yellow-400 mb-2"></i>
+                    <h4 class="text-white font-medium">JavaScript</h4>
+                    <div class="w-full bg-slate-700 h-1.5 rounded-full mt-2">
+                        <div class="bg-yellow-400 h-1.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                <!-- Skill Item -->
+                <div
+                    class="bg-card p-4 rounded-lg border border-slate-700 text-center hover:border-primary transition-colors">
+                    <i class="fa-solid fa-vr-cardboard text-3xl text-indigo-400 mb-2"></i>
+                    <h4 class="text-white font-medium">Unity</h4>
+                    <div class="w-full bg-slate-700 h-1.5 rounded-full mt-2">
+                        <div class="bg-indigo-400 h-1.5 rounded-full" style="width: 80%"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Tpm Latest Service Area End -->
 
-    <!-- Tpm Education Experience Area Start -->
-    <section class="education-experience tmp-section-gapTop">
-        <div class="container">
-            <div class="section-head mb--50">
-                <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    <span class="subtitle">Education & Experience</span>
-                </div>
-                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                    Where Knowledge Meets Experience
-                </h2>
-                <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-                    Empowering businesses with modern web and VR technologies to elevate performance, boost engagement,
-                    and create impactful online experiences.
-                </p>
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-dark">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div class="max-w-screen-md mb-12 lg:mb-16">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Get In Touch</h2>
+                <p class="text-textGray sm:text-xl">Have a project in mind? Let's build something amazing together.</p>
             </div>
-            <h2 class="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">Education <span><img
-                        src="assets/images/custom-line/custom-line.png" alt="custom-line"></span>
-            </h2>
-            <div class="row g-5">
-                <div class="col-lg-6 col-sm-6">
-                    <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <h4 class="edu-sub-title">Hira City School</h4>
-                        <h2 class="edu-title">2005-2016</h2>
-                        <p class="edu-para">
-                            Completed foundational education with a strong focus on academics, discipline, and character
-                            development.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
-                        <h4 class="edu-sub-title">Al-Huda Group of School</h4>
-                        <h2 class="edu-title">2016-2018</h2>
-                        <p class="edu-para">
-                            Completed secondary education with a focus on science, technology, and analytical skills.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
-                        <h4 class="edu-sub-title">Punjab Group of Colleges</h4>
-                        <h2 class="edu-title">2018-2021</h2>
-                        <p class="edu-para">
-                            Completed higher secondary education with a focus on biology, chemistry, and physics,
-                            building a strong foundation in scientific analysis and research.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-4">
-                        <h4 class="edu-sub-title">KICSIT (Sub-Campus of IST)</h4>
-                        <h2 class="edu-title">2022-2026</h2>
-                        <p class="edu-para">
-                            Pursuing a degree focused on software development, web technologies, and problem-solving to
-                            build innovative digital solutions.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="experiences-wrapper">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="experiences-wrap-left-content">
-                            <h2 class="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">Experiences
-                                <span><img src="assets/images/custom-line/custom-line.png" alt="custom-line"></span>
-                            </h2>
-                            <div class="experience-content tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                <h2 class="ex-name">Friend's Vision Academy</h2>
-                                <h3 class="ex-title">MS Office & Web Developer (2024 - Present)</h3>
-                                <p class="ex-para">
-                                    Delivering modern web solutions and professional MS Office training to empower
-                                    students with practical digital skills.
-                                </p>
-                            </div>
-                            <div class="experience-content tmp-scroll-trigger tmp-fade-in animation-order-2">
-                                <h2 class="ex-name">Vibrantink Solution</h2>
-                                <h3 class="ex-title">Web Developer (2023 - Present)</h3>
-                                <p class="ex-para">
-                                    Contributed to designing and developing responsive, high-performance websites for
-                                    diverse client projects.
-                                </p>
-                            </div>
+
+            <div class="bg-card p-8 rounded-2xl border border-slate-700 shadow-2xl">
+                <form action="#" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium text-white">Your Name</label>
+                            <input type="text" id="name"
+                                class="bg-slate-900 border border-slate-600 text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-3"
+                                placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium text-white">Your Email</label>
+                            <input type="email" id="email"
+                                class="bg-slate-900 border border-slate-600 text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-3"
+                                placeholder="name@example.com" required>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="experiences-wrap-right-content">
-                            <img class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                src="assets/images/experiences/expert-img.jpg" alt="expert-img">
-                        </div>
+                    <div>
+                        <label for="subject" class="block mb-2 text-sm font-medium text-white">Subject</label>
+                        <input type="text" id="subject"
+                            class="bg-slate-900 border border-slate-600 text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-3"
+                            placeholder="Project Inquiry" required>
                     </div>
-                </div>
+                    <div>
+                        <label for="message" class="block mb-2 text-sm font-medium text-white">Message</label>
+                        <textarea id="message" rows="5"
+                            class="bg-slate-900 border border-slate-600 text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-3"
+                            placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit"
+                        class="text-white bg-primary hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-900 font-medium rounded-lg text-sm px-5 py-3 w-full md:w-auto transition-all">
+                        Send Message
+                    </button>
+                </form>
             </div>
         </div>
     </section>
-    <!-- Tpm Education Experience Area End -->
 
-    <!-- Tpm Latest Portfolio Area Start -->
-    <div class="latest-portfolio-area custom-column-grid tmp-section-gapTop">
-        <div class="container">
-            <div class="section-head mb--60">
-                <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    <span class="subtitle">My Portfolio</span>
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-slate-800">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="flex items-center">
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Ahmad<span
+                                class="text-primary">.</span></span>
+                    </a>
+                    <p class="text-textGray mt-4 max-w-sm">Let's Make It Happen. I am a skilled freelancer specializing
+                        in web development, WordPress customization, and virtual reality experiences.</p>
+                    <form action="#" class="newsletter-form-1 mt-6">
+                        <input type="email" placeholder="Email Address"
+                            class="bg-slate-800 border border-slate-700 text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-3">
+                        <button type="submit"
+                            class="text-white bg-primary hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-900 font-medium rounded-lg text-sm px-4 py-2 mt-2 w-full md:w-auto">
+                            Subscribe
+                        </button>
+                    </form>
                 </div>
-                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                    Transforming Ideas into Immersive Digital <br /> Experiences
-                </h2>
-                <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-                    Showcasing innovative web and VR projects built to enhance user experience, performance, and digital
-                    impact.
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://ahmadcr17dev.github.io/freshbiteapp_Reactjs/" target="_blank">
-                                    <img class="w-100" src="assets/images/freshbite.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://ahmadcr17dev.github.io/freshbiteapp_Reactjs/"
-                                        target="_blank">
-                                        FreshBite App
-                                    </a>
-                                </h3>
-                                <p class="portfoli-card-para">
-                                    Web Development
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-2">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://primeestate.lovestoblog.com/ahmad/" target="_blank">
-                                    <img class="w-100" src="assets/images/primeestate.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://primeestate.lovestoblog.com/ahmad/" target="_blank">
-                                        PrimeEstate - Real Estate Agency
-                                    </a>
-                                </h3>
-                                <p class="portfoli-card-para">Web Development</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://urban-stich-mern.vercel.app/" target="_blank">
-                                    <img class="w-100" src="assets/images/urbanstich.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://urban-stich-mern.vercel.app/" target="_blank">
-                                        UrbanStich - E-Commerce App
-                                    </a>
-                                </h3>
-                                <p class="portfoli-card-para">
-                                    Web Development
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://kicksandfits.lovestoblog.com/" target="_blank">
-                                    <img class="w-100" src="assets/images/kfc.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://kicksandfits.lovestoblog.com/" target=" _blank">
-                                        KFC - Fast Food App
-                                    </a>
-                                </h3>
-                                <p class="portfoli-card-para">
-                                    Web Development
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-3">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://dribbble.com/ahmad_designer1041" target="_blank">
-                                    <img class="w-100" src="assets/images/agency.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://dribbble.com/ahmad_designer1041" target="_blank">
-                                        Real Estate Agency
-                                    </a>
-                                </h3>
-                                <p class="portfoli-card-para">
-                                    Web Design
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-4">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://dribbble.com/ahmad_designer1041" target="_blank">
-                                    <img class="w-100" src="assets/images/foodie.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://dribbble.com/ahmad_designer1041" target="_blank">
-                                        Food Ordering App
-                                    </a>
-                                </h3>
-                                <p class="portfoli-card-para">
-                                    Mobile App Design
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Tpm Latest Portfolio Area End -->
-
-    <!-- Demo's of some websites -->
-    <div class="latest-portfolio-area custom-column-grid tmp-section-gapTop">
-        <div class="container">
-            <div class="section-head mb--60">
-                <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    <span class="subtitle">My Demo's Sites</span>
-                </div>
-                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                    Turning Inspiration into Interactive <br /> Web Demos
-                </h2>
-                <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-                    From theme replications to custom layouts — each demo highlights my focus on design, performance,
-                    and innovation.
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://ahmadcr17dev.github.io/demos/construction.html" target="_blank">
-                                    <img class="w-100" src="assets/images/construction.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://ahmadcr17dev.github.io/demos/construction.html"
-                                        target="_blank">
-                                        Construction Company
-                                    </a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-2">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://ahmadcr17dev.github.io/demos/education.html" target="_blank">
-                                    <img class="w-100" src="assets/images/education.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://ahmadcr17dev.github.io/demos/education.html"
-                                        target="_blank">
-                                        Education Institution
-                                    </a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-3">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://ahmadcr17dev.github.io/demos/electronics.html" target="_blank">
-                                    <img class="w-100" src="assets/images/electronics.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://ahmadcr17dev.github.io/demos/electronics.html"
-                                        target="_blank">
-                                        Electronics E-commerce Store
-                                    </a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-4">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://ahmadcr17dev.github.io/demos/fastfood.html" target="_blank">
-                                    <img class="w-100" src="assets/images/fastfood.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://ahmadcr17dev.github.io/demos/fastfood.html"
-                                        target="_blank">
-                                        Fast Food Ordering Website
-                                    </a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://ahmadcr17dev.github.io/demos/gym.html" target="_blank">
-                                    <img class="w-100" src="assets/images/gym.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://ahmadcr17dev.github.io/demos/gym.html"
-                                        target="_blank">
-                                        Gym
-                                    </a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://ahmadcr17dev.github.io/demos/hotel.html" target="_blank">
-                                    <img class="w-100" src="assets/images/hotels.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://ahmadcr17dev.github.io/demos/hotel.html"
-                                        target="_blank">
-                                        Hotel Booking App
-                                    </a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://ahmadcr17dev.github.io/demos/wedding.html" target="_blank">
-                                    <img class="w-100" src="assets/images/wedding.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://ahmadcr17dev.github.io/demos/wedding.html"
-                                        target="_blank">
-                                        Wedding Hall App
-                                    </a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                    href="https://ahmadcr17dev.github.io/demos/realestate.html" target="_blank">
-                                    <img class="w-100" src="assets/images/realestate1.png" alt="Thumbnail" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title">
-                                    <a class="link" href="https://ahmadcr17dev.github.io/demos/realestate.html"
-                                        target="_blank">
-                                        Real Estate Agency
-                                    </a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Demo's of some websites -->
-
-    <!-- Tpm Get In touch start -->
-    <section class="get-in-touch-area tmp-section-gapTop">
-        <div class="container">
-            <div class="contact-get-in-touch-wrap">
-                <div class="get-in-touch-wrapper tmponhover">
-                    <div class="row g-5 align-items-center">
-                        <div class="col-lg-5">
-                            <div class="section-head text-align-left">
-                                <div class="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <span class="subtitle">GET IN TOUCH</span>
-                                </div>
-                                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-                                    Let’s Build Something Amazing Together
-                                </h2>
-                                <p class="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-                                    Get in touch to discuss your project ideas, collaborations, or any digital solutions
-                                    you need. I’m always open to turning creative visions into reality.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="contact-inner">
-                                <div class="contact-form">
-                                    <div id="form-messages" class="error"></div>
-                                    <form class="tmp-dynamic-form" id="contact-form" method="POST" action="mailer.php">
-                                        <div class="contact-form-wrapper row">
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <input class="input-field" name="name" id="contact-name"
-                                                        placeholder="Your Name" type="text" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <input class="input-field" id="contact-phone"
-                                                        placeholder="Phone Number" type="tel" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <input class="input-field" id="contact-email" name="email"
-                                                        placeholder="Your Email" type="email" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <input class="input-field" type="text" id="subject" name="subject"
-                                                        placeholder="Subject">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-12">
-                                                <div class="form-group">
-                                                    <textarea class="input-field" placeholder="Your Message"
-                                                        name="message" id="contact-message" required></textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-12">
-                                                <div class="tmp-button-here">
-                                                    <button class="tmp-btn hover-icon-reverse radius-round w-100"
-                                                        name="submit" type="submit" id="submit">
-                                                        <span class="icon-reverse-wrapper">
-                                                            <span class="btn-text">Appointment Now</span>
-                                                            <span class="btn-icon"><i
-                                                                    class="fa-sharp fa-solid fa-arrow-right"></i></span>
-                                                            <span class="btn-icon"><i
-                                                                    class="fa-sharp fa-solid fa-arrow-right"></i></span>
-                                                        </span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Tpm Get In touch End -->
-
-    <!-- Start Footer Area  -->
-    <footer class="footer-area footer-style-one-wrapper bg-color-footer bg_images tmp-section-gap">
-        <div class="container">
-            <div class="footer-main footer-style-one">
-                <div class="row g-5">
-                    <div class="col-lg-5 col-md-6">
-                        <div class="single-footer-wrapper border-right mr--20">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="logo.png"
-                                        alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
-                                </a>
-                            </div>
-                            <p class="description"><span>Let's Make</span> It Happen</p>
-                            <form action="#" class="newsletter-form-1 mt--40">
-                                <input type="email" placeholder="Email Adress">
-                                <span class="form-icon"><i class="fa-regular fa-envelope"></i></span>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-footer-wrapper quick-link-wrap">
-                            <h5 class="ft-title">Quick Link</h5>
-                            <ul class="ft-link tmp-link-animation">
-                                <li>
-                                    <a>About Me</a>
-                                </li>
-                                <li>
-                                    <a>Service</a>
-                                </li>
-                                <li>
-                                    <a>Contact Me</a>
-                                </li>
-                                <li>
-                                    <a>Blog Post</a>
-                                </li>
-                                <li>
-                                    <a>Pricing</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-footer-wrapper contact-wrap">
-                            <h5 class="ft-title">Contact </h5>
-                            <ul class="ft-link tmp-link-animation">
-                                <li>
-                                    <span class="ft-icon">
-                                        <i class="fa-solid fa-envelope"></i>
-                                    </span>
-                                    <a href="mailto:chaudaryahmad1041@gmail.com" target="_blank">
-                                        chaudaryahmad1041@gmail.com
-                                    </a>
-                                </li>
-                                <li>
-                                    <span class="ft-icon">
-                                        <i class="fa-solid fa-location-dot"></i>
-                                    </span>
-                                    Islamabad, Pakistan
-                                </li>
-                                <li>
-                                    <span class="ft-icon">
-                                        <i class="fa-solid fa-phone"></i>
-                                    </span>
-                                    <a href="tel:+923226212707">
-                                        +92 322 6212707
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="social-link footer">
-                                <a href="https://www.instagram.com/im__ahmaadd?igsh=MWFzYTVscG14ZTh1aw=="
-                                    target="_blank">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/ahmadmobeen?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-                                    <i class="fa-brands fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://github.com/ahmadcr17dev" target="_blank">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                                <a href="https://www.facebook.com/share/17TCs7ZrGD/" target="_blank">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="copyright-area-one">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="main-wrapper">
-                        <p class="copy-right-para tmp-link-animation">
-                            © CopyRight
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script> | All Rights Reserved
-                        </p>
-                        <ul class="tmp-link-animation">
-                            <li>
-                                Trams & Condition
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-white uppercase">Quick Links</h2>
+                        <ul class="text-textGray font-medium">
+                            <li class="mb-4">
+                                <a href="#home" class="hover:text-primary transition">Home</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#services" class="hover:text-primary transition">Services</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#portfolio" class="hover:text-primary transition">Portfolio</a>
                             </li>
                             <li>
-                                Privacy Policy
+                                <a href="#contact" class="hover:text-primary transition">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-white uppercase">Follow us</h2>
+                        <ul class="text-textGray font-medium">
+                            <li class="mb-4">
+                                <a href="https://www.linkedin.com/in/ahmadmobeen" target="_blank"
+                                    class="hover:text-primary transition">LinkedIn</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="https://github.com/ahmadcr17dev" target="_blank"
+                                    class="hover:text-primary transition">Github</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="https://www.instagram.com/im__ahmaadd" target="_blank"
+                                    class="hover:text-primary transition">Instagram</a>
                             </li>
                             <li>
-                                Contact Us
+                                <a href="https://www.facebook.com/share/17TCs7ZrGD/" target="_blank"
+                                    class="hover:text-primary transition">Facebook</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-white uppercase">Contact</h2>
+                        <ul class="text-textGray font-medium">
+                            <li class="mb-4 flex items-center">
+                                <i class="fa-solid fa-envelope mr-2 text-primary"></i>
+                                <a href="mailto:chaudaryahmad1041@gmail.com"
+                                    class="hover:text-primary transition">chaudaryahmad1041@gmail.com</a>
+                            </li>
+                            <li class="mb-4 flex items-center">
+                                <i class="fa-solid fa-location-dot mr-2 text-primary"></i>
+                                <span class="hover:text-primary transition">Islamabad, Pakistan</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-phone mr-2 text-primary"></i>
+                                <a href="tel:+923226212707" class="hover:text-primary transition">+92 322 6212707</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+            <hr class="my-6 border-slate-700 sm:mx-auto lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-textGray sm:text-center">© 2023 <a href="#"
+                        class="hover:underline text-white">Ahmad Mobeen™</a>. All Rights Reserved.
+                </span>
+                <div class="flex mt-4 sm:justify-center sm:mt-0 space-x-5">
+                    <a href="#" class="text-textGray hover:text-white">Terms & Conditions</a>
+                    <a href="#" class="text-textGray hover:text-white">Privacy Policy</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <!-- End Footer Area  -->
+    </footer>
 
-    <script src="assets/js/vendor/jquery.js"></script>
-    <script src="assets/js/vendor/jquery-ui.min.js"></script>
-    <script src="assets/js/vendor/waypoints.min.js"></script>
-    <script src="assets/js/plugins/odometer.js"></script>
-    <script src="assets/js/vendor/appear.js"></script>
-    <script src="assets/js/vendor/jquery-one-page-nav.js"></script>
-    <script src="assets/js/plugins/swiper.js"></script>
-    <script src="assets/js/plugins/gsap.js"></script>
-    <script src="assets/js/plugins/splittext.js"></script>
-    <script src="assets/js/plugins/scrolltigger.js"></script>
-    <script src="assets/js/plugins/scrolltoplugins.js"></script>
-    <script src="assets/js/plugins/smoothscroll.js"></script>
-    <!-- bootstrap Js-->
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/waw.js"></script>
-    <script src="assets/js/plugins/isotop.js"></script>
-    <script src="assets/js/plugins/animation.js"></script>
-    <script src="assets/js/plugins/contact.form.js"></script>
-    <script src="assets/js/vendor/backtop.js"></script>
-    <script src="assets/js/plugins/text-type.js"></script>
-    <!-- custom Js -->
-    <script src="assets/js/main.js"></script>
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('navbar-default');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>
