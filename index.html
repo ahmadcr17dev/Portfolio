@@ -407,14 +407,14 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Portfolio Items with Image Reveal -->
-                <div class="portfolio-item reveal group cursor-none overflow-hidden rounded-3xl bg-card/80 backdrop-blur-sm border border-slate-700/50 hover:border-primary/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary
-                                <!-- Portfolio Item 1 -->
+
+                <!-- Portfolio Item 1 -->
                 <div class=" portfolio-item reveal group cursor-none overflow-hidden rounded-3xl bg-card/80
                     backdrop-blur-sm border border-slate-700/50 hover:border-primary/50 transition-all duration-700
                     hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20">
                     <div
                         class="relative overflow-hidden rounded-2xl h-64 bg-gradient-to-br from-slate-800 to-slate-900 group-hover:scale-110 transition-transform duration-700">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop"
+                        <img src="./assets/images/freshbite.png"
                             alt="FreshBite" class="w-full h-full object-cover">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -449,7 +449,7 @@
                     style="animation-delay: 0.1s">
                     <div
                         class="relative overflow-hidden rounded-2xl h-64 bg-gradient-to-br from-slate-800 to-slate-900 group-hover:scale-110 transition-transform duration-700">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
+                        <img src="./assets/images/urbanstich.png"
                             alt="UrbanStich" class="w-full h-full object-cover">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -478,7 +478,7 @@
                     style="animation-delay: 0.2s">
                     <div
                         class="relative overflow-hidden rounded-2xl h-64 bg-gradient-to-br from-slate-800 to-slate-900 group-hover:scale-110 transition-transform duration-700">
-                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop"
+                        <img src="./assets/images/kfc.png"
                             alt="PrimeEstate" class="w-full h-full object-cover">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -486,13 +486,14 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-black text-white mb-3 group-hover:text-accent transition-colors">
-                            PrimeEstate</h3>
-                        <p class="text-textGray mb-6 leading-relaxed">Modern real estate platform with property search,
-                            filters & booking system</p>
+                            KFC Clone</h3>
+                        <p class="text-textGray mb-6 leading-relaxed">
+                            Modern Food Ordering platform with items filtering, add to cart functionality & checkout features.
+                        </p>
                         <div class="flex items-center space-x-4 text-sm text-textGray">
-                            <span class="px-3 py-1 bg-slate-800 rounded-full">WordPress</span>
-                            <span class="px-3 py-1 bg-slate-800 rounded-full">PHP</span>
-                            <span class="px-3 py-1 bg-slate-800 rounded-full">MySQL</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-full">React</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-full">Node</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-full">TailwindCSS</span>
                         </div>
                         <a href="https://primeestate.lovestoblog.com/ahmad/" target="_blank"
                             class="mt-6 inline-flex items-center text-accent hover:text-white font-semibold group/link">
@@ -1193,9 +1194,25 @@
     </script>
 
     <!-- Additional CSS for buttons and cards -->
-    <style>
+    <style type="text/tailwindcss">
         .btn-primary {
-            @apply inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-black rounded-2xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105 border border-transparent hover:border-primary/50;
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(to right, #6366f1, #a855f7);
+            color: white;
+            font-weight: 900;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 25px 50px rgba(99, 102, 241, 0.5);
+            border-color: rgba(99, 102, 241, 0.5);
+            transform: scale(1.05);
         }
 
         .btn-secondary {
