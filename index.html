@@ -579,18 +579,33 @@
       }
 
 
-      /* Skills — radial root tree */
+      /* Skills — full-circle constellation */
       .skill-fan-wrap {
-        max-width: 920px;
-        margin: 0 auto;
+        max-width: 720px;
+        margin: 0.75rem auto 0;
       }
       .skill-fan {
         position: relative;
-        --dr: min(24vw, 148px);
-        --lr: min(33vw, 200px);
-        --lr-alt: min(39vw, 236px);
-        height: calc(var(--lr-alt) + 3.75rem);
+        --dr: min(22vw, 155px);
+        --lr: min(34vw, 245px);
+        --lr-alt: min(40vw, 290px);
+        width: 100%;
+        height: calc(2 * var(--lr-alt) + 3.25rem);
         margin: 0 auto;
+      }
+      .skill-fan::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: calc(2 * var(--dr));
+        height: calc(2 * var(--dr));
+        transform: translate(-50%, -50%);
+        border: 1.5px dashed
+          color-mix(in srgb, var(--accent) 28%, var(--line));
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 0;
       }
       .skill-fan-svg {
         position: absolute;
@@ -632,8 +647,8 @@
       .skill-fan-root {
         position: absolute;
         left: 50%;
-        bottom: 2%;
-        transform: translateX(-50%);
+        top: 50%;
+        transform: translate(-50%, -50%);
         z-index: 5;
         min-width: 7rem;
         padding: 0.7rem 1rem;
@@ -668,26 +683,14 @@
         }
       }
       .skill-fan-trunk {
-        position: absolute;
-        left: 50%;
-        bottom: calc(2% + 2.7rem);
-        width: 3px;
-        height: min(5vw, 28px);
-        transform: translateX(-50%);
-        background: linear-gradient(
-          to top,
-          var(--accent),
-          color-mix(in srgb, var(--accent) 35%, transparent)
-        );
-        border-radius: 99px;
-        z-index: 1;
+        display: none;
       }
       .skill-fan-domain {
         position: absolute;
         left: 50%;
-        bottom: 2%;
+        top: 50%;
         z-index: 4;
-        transform: translate(-50%, -40%) rotate(var(--a))
+        transform: translate(-50%, -50%) rotate(var(--a))
           translateY(calc(-1 * var(--dr))) rotate(calc(var(--a) * -1));
         border: 1.5px solid color-mix(in srgb, var(--c, var(--accent)) 45%, var(--line));
         background: var(--surface);
@@ -713,9 +716,9 @@
         border-color: var(--c, var(--accent));
         box-shadow: 0 12px 28px
           color-mix(in srgb, var(--c, var(--accent)) 30%, transparent);
-        transform: translate(-50%, -40%) rotate(var(--a))
-          translateY(calc(-1 * var(--dr) + 4px)) rotate(calc(var(--a) * -1))
-          scale(1.05);
+        transform: translate(-50%, -50%) rotate(var(--a))
+          translateY(calc(-1 * var(--dr))) rotate(calc(var(--a) * -1))
+          scale(1.06);
         z-index: 6;
       }
       html.dark .skill-fan-domain:hover,
@@ -731,11 +734,11 @@
       .skill-fan-leaf {
         position: absolute;
         left: 50%;
-        bottom: 2%;
+        top: 50%;
         z-index: calc(4 + var(--i));
-        /* Spread skills across a wider arc so labels stay readable */
+        /* Keep leaf arc under the 60° domain gap so badges stay clear */
         --spread: calc(
-          (var(--i) - (var(--n) - 1) / 2) * (96deg / max(var(--n) - 1, 1))
+          (var(--i) - (var(--n) - 1) / 2) * (48deg / max(var(--n) - 1, 1))
         );
         --leaf-a: calc(var(--da) + var(--spread));
         --leaf-r: var(--lr);
@@ -750,10 +753,9 @@
         white-space: nowrap;
         opacity: 0;
         pointer-events: none;
-        transform: translate(-50%, -40%) scale(0.4);
+        transform: translate(-50%, -50%) scale(0.4);
         box-shadow: 0 6px 16px color-mix(in srgb, var(--ink) 7%, transparent);
       }
-      /* Stagger every other badge farther out to avoid stacking */
       .skill-fan-leaf:nth-child(even) {
         --leaf-r: var(--lr-alt);
       }
@@ -765,13 +767,13 @@
       @keyframes fan-leaf-out {
         from {
           opacity: 0;
-          transform: translate(-50%, -40%) rotate(var(--da))
+          transform: translate(-50%, -50%) rotate(var(--da))
             translateY(calc(-1 * var(--dr))) rotate(calc(var(--da) * -1))
             scale(0.5);
         }
         to {
           opacity: 1;
-          transform: translate(-50%, -40%) rotate(var(--leaf-a))
+          transform: translate(-50%, -50%) rotate(var(--leaf-a))
             translateY(calc(-1 * var(--leaf-r))) rotate(calc(var(--leaf-a) * -1))
             scale(1);
         }
@@ -781,7 +783,7 @@
         color: #fff;
         border-color: var(--c, var(--accent));
         z-index: 30;
-        transform: translate(-50%, -40%) rotate(var(--leaf-a))
+        transform: translate(-50%, -50%) rotate(var(--leaf-a))
           translateY(calc(-1 * var(--leaf-r))) rotate(calc(var(--leaf-a) * -1))
           scale(1.08);
       }
@@ -790,7 +792,7 @@
       }
       .skill-fan-hint {
         text-align: center;
-        margin-top: 0.15rem;
+        margin-top: 0.35rem;
         font-size: 0.78rem;
         color: var(--muted);
       }
@@ -807,6 +809,7 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 0.65rem;
         }
+        .skill-fan::before,
         .skill-fan-svg,
         .skill-fan-root,
         .skill-fan-trunk {
@@ -815,7 +818,7 @@
         .skill-fan-domain {
           position: relative;
           left: auto;
-          bottom: auto;
+          top: auto;
           transform: none !important;
           width: 100%;
           text-align: center;
@@ -838,7 +841,7 @@
         .skill-fan-leaf {
           position: relative;
           left: auto;
-          bottom: auto;
+          top: auto;
           opacity: 1;
           transform: none !important;
           animation: fan-leaf-mobile 0.35s ease both !important;
@@ -864,7 +867,7 @@
         .skill-fan-leaves.is-open .skill-fan-leaf {
           animation: none !important;
           opacity: 1;
-          transform: translate(-50%, -40%) rotate(var(--leaf-a))
+          transform: translate(-50%, -50%) rotate(var(--leaf-a))
             translateY(calc(-1 * var(--leaf-r)))
             rotate(calc(var(--leaf-a) * -1));
         }
@@ -1553,7 +1556,7 @@
               <span class="portrait-ring portrait-ring-2" aria-hidden="true"></span>
               <span class="portrait-ring portrait-ring-3" aria-hidden="true"></span>
               <img
-                src="./assets/images/portrait.jpg"
+                src="./images/main%20image%201.jpeg"
                 alt="Muhammad Ahmad Mobeen"
                 class="portrait-photo"
               />
@@ -1808,7 +1811,7 @@
                 <div class="hex-shape">
                   <div class="hex-inner">
                     <img
-                      src="./assets/images/freshbite.png"
+                      src="./images/freshbite.png"
                       alt="FreshBite Grocery App"
                       loading="lazy"
                     />
@@ -1837,7 +1840,7 @@
                 <div class="hex-shape">
                   <div class="hex-inner">
                     <img
-                      src="./assets/images/urbanstich.png"
+                      src="./images/urbanstich.png"
                       alt="UrbanStich E-commerce"
                       loading="lazy"
                     />
@@ -1866,7 +1869,7 @@
                 <div class="hex-shape">
                   <div class="hex-inner">
                     <img
-                      src="./assets/images/kfc.png"
+                      src="./images/kfc.png"
                       alt="KFC Clone Food Ordering"
                       loading="lazy"
                     />
@@ -1950,7 +1953,7 @@
                 type="button"
                 class="skill-fan-domain is-active"
                 data-domain="frontend"
-                style="--a: -90deg; --c: #0369a1"
+                style="--a: 0deg; --c: #0369a1"
               >
                 Frontend
               </button>
@@ -1958,7 +1961,7 @@
                 type="button"
                 class="skill-fan-domain"
                 data-domain="backend"
-                style="--a: -54deg; --c: #0d9488"
+                style="--a: 60deg; --c: #0d9488"
               >
                 Backend &amp; APIs
               </button>
@@ -1966,7 +1969,7 @@
                 type="button"
                 class="skill-fan-domain"
                 data-domain="databases"
-                style="--a: -18deg; --c: #ca8a04"
+                style="--a: 120deg; --c: #ca8a04"
               >
                 Databases
               </button>
@@ -1974,7 +1977,7 @@
                 type="button"
                 class="skill-fan-domain"
                 data-domain="cloud"
-                style="--a: 18deg; --c: #7c3aed"
+                style="--a: 180deg; --c: #7c3aed"
               >
                 Cloud &amp; DevOps
               </button>
@@ -1982,7 +1985,7 @@
                 type="button"
                 class="skill-fan-domain"
                 data-domain="cms"
-                style="--a: 54deg; --c: #ea580c"
+                style="--a: 240deg; --c: #ea580c"
               >
                 CMS &amp; Commerce
               </button>
@@ -1990,7 +1993,7 @@
                 type="button"
                 class="skill-fan-domain"
                 data-domain="tools"
-                style="--a: 90deg; --c: #db2777"
+                style="--a: 300deg; --c: #db2777"
               >
                 Tools &amp; VR
               </button>
@@ -1998,7 +2001,7 @@
               <div
                 class="skill-fan-leaves is-open"
                 data-domain="frontend"
-                style="--n: 9; --da: -90deg; --c: #0369a1"
+                style="--n: 9; --da: 0deg; --c: #0369a1"
               >
                 <span class="skill-fan-leaf" style="--i: 0">React.js</span>
                 <span class="skill-fan-leaf" style="--i: 1">Next.js</span>
@@ -2013,7 +2016,7 @@
               <div
                 class="skill-fan-leaves"
                 data-domain="backend"
-                style="--n: 6; --da: -54deg; --c: #0d9488"
+                style="--n: 6; --da: 60deg; --c: #0d9488"
               >
                 <span class="skill-fan-leaf" style="--i: 0">Node.js</span>
                 <span class="skill-fan-leaf" style="--i: 1">Express.js</span>
@@ -2025,7 +2028,7 @@
               <div
                 class="skill-fan-leaves"
                 data-domain="databases"
-                style="--n: 5; --da: -18deg; --c: #ca8a04"
+                style="--n: 5; --da: 120deg; --c: #ca8a04"
               >
                 <span class="skill-fan-leaf" style="--i: 0">MongoDB</span>
                 <span class="skill-fan-leaf" style="--i: 1">MySQL</span>
@@ -2036,7 +2039,7 @@
               <div
                 class="skill-fan-leaves"
                 data-domain="cloud"
-                style="--n: 6; --da: 18deg; --c: #7c3aed"
+                style="--n: 6; --da: 180deg; --c: #7c3aed"
               >
                 <span class="skill-fan-leaf" style="--i: 0">Vercel</span>
                 <span class="skill-fan-leaf" style="--i: 1">Render</span>
@@ -2048,7 +2051,7 @@
               <div
                 class="skill-fan-leaves"
                 data-domain="cms"
-                style="--n: 6; --da: 54deg; --c: #ea580c"
+                style="--n: 6; --da: 240deg; --c: #ea580c"
               >
                 <span class="skill-fan-leaf" style="--i: 0">WordPress</span>
                 <span class="skill-fan-leaf" style="--i: 1">WooCommerce</span>
@@ -2060,7 +2063,7 @@
               <div
                 class="skill-fan-leaves"
                 data-domain="tools"
-                style="--n: 6; --da: 90deg; --c: #db2777"
+                style="--n: 6; --da: 300deg; --c: #db2777"
               >
                 <span class="skill-fan-leaf" style="--i: 0">Git / GitHub</span>
                 <span class="skill-fan-leaf" style="--i: 1">VS Code</span>
@@ -2389,7 +2392,7 @@
               const c =
                 getComputedStyle(d).getPropertyValue("--c").trim() || "#0369a1";
               const mx = (from.x + to.x) / 2;
-              const my = Math.min(from.y, to.y) - 8;
+              const my = (from.y + to.y) / 2;
               const on = d.dataset.domain === active;
               return (
                 '<path class="' +
