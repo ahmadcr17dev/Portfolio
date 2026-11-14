@@ -3,17 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ahmad Mobeen — Software Engineer</title>
+    <title>Muhammad Ahmad Mobeen — Software Engineer · VR · AI</title>
     <meta
       name="description"
-      content="Muhammad Ahmad Mobeen — Full Stack Software Engineer specialising in Virtual Reality, React, Next.js, Node.js, TypeScript and MERN stack. Available for freelance and full-time roles."
+      content="Muhammad Ahmad Mobeen — Professional Software Engineer building production web systems, immersive VR experiences, and AI-powered products with React, Next.js, Node.js, TypeScript, Unity, and modern ML tooling. Freelance rates aligned to the Pakistan market."
     />
+    <meta name="author" content="Muhammad Ahmad Mobeen" />
+    <meta
+      name="keywords"
+      content="Muhammad Ahmad Mobeen, Software Engineer, Full Stack Developer, Virtual Reality, AI Engineer, Freelance Pakistan, React, Next.js, Node.js, TypeScript, Unity, Portfolio"
+    />
+    <meta property="og:title" content="Muhammad Ahmad Mobeen — Software Engineer · VR · AI" />
+    <meta
+      property="og:description"
+      content="Production web systems, immersive VR, and intelligent AI products — engineered end to end. Freelance pricing for the Pakistan market."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./images/main%20image%201.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Muhammad Ahmad Mobeen — Software Engineer · VR · AI" />
+    <meta
+      name="twitter:description"
+      content="Full-stack, VR, and AI engineering — production systems with clear outcomes."
+    />
+    <meta name="twitter:image" content="./images/main%20image%201.jpeg" />
+    <meta name="theme-color" content="#0F172A" />
+    <link rel="canonical" href="https://ahmadcr17dev.github.io/Portfolio/" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./favicon.svg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Ahmad Mobeen",
+        "url": "https://ahmadcr17dev.github.io/Portfolio/",
+        "jobTitle": "Software Engineer",
+        "description": "Software Engineer specializing in full-stack web, Virtual Reality, and AI-assisted products.",
+        "email": "mailto:chaudaryahmad1041@gmail.com",
+        "telephone": "+923195436507",
+        "sameAs": [
+          "https://github.com/ahmadcr17dev",
+          "https://linkedin.com/in/chaudaryahmad"
+        ],
+        "knowsAbout": [
+          "Software Engineering",
+          "React",
+          "Next.js",
+          "Node.js",
+          "TypeScript",
+          "Virtual Reality",
+          "Unity",
+          "Artificial Intelligence",
+          "Trustworthy AI",
+          "Cybersecurity",
+          "Federated Learning",
+          "Explainable AI"
+        ]
+      }
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -397,8 +450,8 @@
       /* Circular portrait + spinning rings */
       .portrait-stage {
         position: relative;
-        width: min(260px, 68vw);
-        height: min(260px, 68vw);
+        width: min(300px, 72vw);
+        height: min(300px, 72vw);
         margin-inline: auto;
         display: grid;
         place-items: center;
@@ -579,297 +632,219 @@
       }
 
 
-      /* Skills — full-circle constellation */
-      .skill-fan-wrap {
-        max-width: 720px;
-        margin: 0.75rem auto 0;
+      /* Skills — stack matrix */
+      .skill-matrix {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 2.5rem;
       }
-      .skill-fan {
-        position: relative;
-        --dr: min(22vw, 155px);
-        --lr: min(34vw, 245px);
-        --lr-alt: min(40vw, 290px);
-        width: 100%;
-        height: calc(2 * var(--lr-alt) + 3.25rem);
-        margin: 0 auto;
-      }
-      .skill-fan::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: calc(2 * var(--dr));
-        height: calc(2 * var(--dr));
-        transform: translate(-50%, -50%);
-        border: 1.5px dashed
-          color-mix(in srgb, var(--accent) 28%, var(--line));
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 0;
-      }
-      .skill-fan-svg {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        overflow: visible;
-      }
-      .skill-fan-svg path {
-        fill: none;
-        stroke-linecap: round;
-        stroke-width: 2;
-        opacity: 0.35;
-      }
-      .skill-fan-svg path.is-active {
-        opacity: 0.95;
-        stroke-width: 2.5;
-        filter: drop-shadow(
-          0 0 6px color-mix(in srgb, var(--accent) 40%, transparent)
-        );
-      }
-      .skill-fan-svg path.skill-leaf-link {
-        stroke-width: 1.4;
-        opacity: 0;
-        stroke-dasharray: 120;
-        stroke-dashoffset: 120;
-      }
-      .skill-fan-svg path.skill-leaf-link.is-drawn {
-        animation: fan-draw 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        animation-delay: var(--d, 0s);
-      }
-      @keyframes fan-draw {
-        to {
-          stroke-dashoffset: 0;
-          opacity: 0.65;
+      @media (min-width: 900px) {
+        .skill-matrix {
+          grid-template-columns: 15.5rem minmax(0, 1fr);
+          gap: 2rem;
+          align-items: start;
+        }
+        .skill-tabs {
+          display: flex;
+          flex-direction: column;
+          overflow: visible;
+          padding: 0;
+          border-right: 1.5px solid var(--line);
+          padding-right: 1.25rem;
+          gap: 0.45rem;
+        }
+        .skill-tab {
+          width: 100%;
+          border-color: transparent;
+          background: transparent;
+          border-radius: 0.4rem;
+          white-space: nowrap;
         }
       }
-      .skill-fan-root {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 5;
-        min-width: 7rem;
-        padding: 0.7rem 1rem;
-        border-radius: 999px;
-        text-align: center;
-        background: radial-gradient(
-          circle at 30% 25%,
-          color-mix(in srgb, var(--accent) 40%, var(--surface)),
-          var(--accent)
-        );
-        color: var(--btn-on-accent);
-        font-family: Fraunces, Georgia, serif;
-        font-weight: 600;
-        font-size: 0.95rem;
-        line-height: 1.2;
-        box-shadow:
-          0 0 0 7px color-mix(in srgb, var(--accent) 14%, transparent),
-          0 14px 32px color-mix(in srgb, var(--accent) 28%, transparent);
-        animation: fan-root-pulse 4s ease-in-out infinite;
+      .skill-tabs {
+        display: flex;
+        gap: 0.45rem;
+        overflow-x: auto;
+        padding-bottom: 0.25rem;
+        scrollbar-width: thin;
       }
-      @keyframes fan-root-pulse {
-        0%,
-        100% {
-          box-shadow:
-            0 0 0 7px color-mix(in srgb, var(--accent) 14%, transparent),
-            0 14px 32px color-mix(in srgb, var(--accent) 28%, transparent);
-        }
-        50% {
-          box-shadow:
-            0 0 0 12px color-mix(in srgb, var(--accent) 10%, transparent),
-            0 18px 40px color-mix(in srgb, var(--accent) 34%, transparent);
-        }
-      }
-      .skill-fan-trunk {
-        display: none;
-      }
-      .skill-fan-domain {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        z-index: 4;
-        transform: translate(-50%, -50%) rotate(var(--a))
-          translateY(calc(-1 * var(--dr))) rotate(calc(var(--a) * -1));
-        border: 1.5px solid color-mix(in srgb, var(--c, var(--accent)) 45%, var(--line));
+      .skill-tab {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        text-align: left;
+        padding: 0.7rem 0.95rem;
+        border: 1.5px solid var(--line);
+        border-radius: 0.45rem;
         background: var(--surface);
-        color: var(--ink);
-        font-weight: 700;
-        font-size: 0.78rem;
-        padding: 0.55rem 0.85rem;
-        border-radius: 999px;
+        color: var(--muted);
+        font-size: 0.86rem;
+        font-weight: 600;
         cursor: pointer;
         white-space: nowrap;
-        box-shadow: 0 8px 20px color-mix(in srgb, var(--ink) 8%, transparent);
         transition:
-          background 0.25s,
-          color 0.25s,
-          border-color 0.25s,
-          box-shadow 0.25s,
-          transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+          color 0.2s,
+          border-color 0.2s,
+          background 0.2s;
       }
-      .skill-fan-domain:hover,
-      .skill-fan-domain.is-active {
-        background: var(--c, var(--accent));
-        color: #fff;
-        border-color: var(--c, var(--accent));
-        box-shadow: 0 12px 28px
-          color-mix(in srgb, var(--c, var(--accent)) 30%, transparent);
-        transform: translate(-50%, -50%) rotate(var(--a))
-          translateY(calc(-1 * var(--dr))) rotate(calc(var(--a) * -1))
-          scale(1.06);
-        z-index: 6;
+      .skill-tab .skill-tab-num {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 0.95rem;
+        color: var(--accent);
+        min-width: 1.4rem;
       }
-      html.dark .skill-fan-domain:hover,
-      html.dark .skill-fan-domain.is-active {
-        color: #0b1220;
-      }
-      .skill-fan-leaves {
-        display: none;
-      }
-      .skill-fan-leaves.is-open {
-        display: contents;
-      }
-      .skill-fan-leaf {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        z-index: calc(4 + var(--i));
-        /* Keep leaf arc under the 60° domain gap so badges stay clear */
-        --spread: calc(
-          (var(--i) - (var(--n) - 1) / 2) * (48deg / max(var(--n) - 1, 1))
-        );
-        --leaf-a: calc(var(--da) + var(--spread));
-        --leaf-r: var(--lr);
-        padding: 0.38rem 0.65rem;
-        border-radius: 999px;
-        border: 1px solid
-          color-mix(in srgb, var(--c, var(--accent)) 30%, var(--line));
-        background: color-mix(in srgb, var(--surface) 94%, var(--accent-soft));
+      .skill-tab:hover {
         color: var(--ink);
-        font-size: 0.7rem;
-        font-weight: 600;
-        white-space: nowrap;
-        opacity: 0;
-        pointer-events: none;
-        transform: translate(-50%, -50%) scale(0.4);
-        box-shadow: 0 6px 16px color-mix(in srgb, var(--ink) 7%, transparent);
+        border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
       }
-      .skill-fan-leaf:nth-child(even) {
-        --leaf-r: var(--lr-alt);
+      .skill-tab.is-active {
+        color: var(--ink);
+        background: color-mix(in srgb, var(--accent-soft) 70%, var(--surface));
+        border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
       }
-      .skill-fan-leaves.is-open .skill-fan-leaf {
-        pointer-events: auto;
-        animation: fan-leaf-out 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        animation-delay: calc(var(--i) * 0.04s);
+      .skill-panel {
+        display: none;
+        border: 1.5px solid var(--line);
+        border-radius: 0.75rem;
+        background: var(--surface);
+        padding: 1.5rem 1.35rem 1.6rem;
       }
-      @keyframes fan-leaf-out {
+      @media (min-width: 640px) {
+        .skill-panel {
+          padding: 1.85rem 1.85rem 2rem;
+        }
+      }
+      .skill-panel.is-active {
+        display: block;
+        animation: skill-panel-in 0.35s ease both;
+      }
+      @keyframes skill-panel-in {
         from {
           opacity: 0;
-          transform: translate(-50%, -50%) rotate(var(--da))
-            translateY(calc(-1 * var(--dr))) rotate(calc(var(--da) * -1))
-            scale(0.5);
+          transform: translateY(8px);
         }
         to {
           opacity: 1;
-          transform: translate(-50%, -50%) rotate(var(--leaf-a))
-            translateY(calc(-1 * var(--leaf-r))) rotate(calc(var(--leaf-a) * -1))
-            scale(1);
+          transform: none;
         }
       }
-      .skill-fan-leaf:hover {
-        background: var(--c, var(--accent));
-        color: #fff;
-        border-color: var(--c, var(--accent));
-        z-index: 30;
-        transform: translate(-50%, -50%) rotate(var(--leaf-a))
-          translateY(calc(-1 * var(--leaf-r))) rotate(calc(var(--leaf-a) * -1))
-          scale(1.08);
+      .skill-panel-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.5rem 1rem;
+        margin-bottom: 0.65rem;
       }
-      html.dark .skill-fan-leaf:hover {
-        color: #0b1220;
+      .skill-panel-head h3 {
+        font-family: Fraunces, Georgia, serif;
+        font-size: clamp(1.45rem, 2.5vw, 1.85rem);
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.02em;
       }
-      .skill-fan-hint {
-        text-align: center;
-        margin-top: 0.35rem;
+      .skill-panel-head .skill-focus {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .skill-panel > p {
+        color: var(--muted);
+        font-size: 0.98rem;
+        line-height: 1.6;
+        max-width: 40rem;
+        margin-bottom: 1.5rem;
+      }
+      .skill-meters {
+        display: grid;
+        gap: 0.95rem;
+        margin-bottom: 1.6rem;
+      }
+      .skill-meter {
+        display: grid;
+        gap: 0.4rem;
+      }
+      .skill-meter-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0.75rem;
+      }
+      .skill-meter-top span {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .skill-meter-top em {
+        font-style: normal;
         font-size: 0.78rem;
+        font-weight: 700;
         color: var(--muted);
       }
-      .skill-fan-hint strong {
-        color: var(--accent);
-        font-weight: 700;
+      .skill-track {
+        height: 0.4rem;
+        border-radius: 99px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        overflow: hidden;
       }
-
-      @media (max-width: 720px) {
-        .skill-fan {
-          height: auto;
-          min-height: 0;
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 0.65rem;
-        }
-        .skill-fan::before,
-        .skill-fan-svg,
-        .skill-fan-root,
-        .skill-fan-trunk {
-          display: none;
-        }
-        .skill-fan-domain {
-          position: relative;
-          left: auto;
-          top: auto;
-          transform: none !important;
-          width: 100%;
-          text-align: center;
-        }
-        .skill-fan-domain:hover,
-        .skill-fan-domain.is-active {
-          transform: none !important;
-        }
-        .skill-fan-leaves {
-          display: none;
-          grid-column: 1 / -1;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 0.5rem;
-          padding-top: 0.35rem;
-        }
-        .skill-fan-leaves.is-open {
-          display: flex;
-        }
-        .skill-fan-leaf {
-          position: relative;
-          left: auto;
-          top: auto;
-          opacity: 1;
-          transform: none !important;
-          animation: fan-leaf-mobile 0.35s ease both !important;
-          animation-delay: calc(var(--i) * 0.035s) !important;
-        }
-        @keyframes fan-leaf-mobile {
-          from {
-            opacity: 0;
-            transform: translateY(8px);
-          }
-          to {
-            opacity: 1;
-            transform: none;
-          }
-        }
+      .skill-fill {
+        height: 100%;
+        width: 0;
+        border-radius: inherit;
+        background: linear-gradient(
+          90deg,
+          var(--accent),
+          color-mix(in srgb, var(--accent) 55%, var(--ring-c))
+        );
+        transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .skill-panel.is-active .skill-fill {
+        width: var(--lvl);
+      }
+      .skill-chip-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.7rem;
+      }
+      .skill-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .skill-chips span {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.42rem 0.75rem;
+        border: 1.5px solid var(--line);
+        border-radius: 0.35rem;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 0.8rem;
+        font-weight: 600;
+        transition:
+          border-color 0.2s,
+          color 0.2s,
+          background 0.2s;
+      }
+      .skill-chips span:hover {
+        border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
+        color: var(--accent);
+        background: var(--accent-soft);
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .skill-fan-root,
-        .skill-fan-svg path.skill-leaf-link {
-          animation: none !important;
+        .skill-panel.is-active {
+          animation: none;
         }
-        .skill-fan-leaves.is-open .skill-fan-leaf {
-          animation: none !important;
-          opacity: 1;
-          transform: translate(-50%, -50%) rotate(var(--leaf-a))
-            translateY(calc(-1 * var(--leaf-r)))
-            rotate(calc(var(--leaf-a) * -1));
+        .skill-fill {
+          transition: none;
         }
       }
 
@@ -1430,6 +1405,922 @@
           animation: none;
         }
       }
+
+      /* Discipline ticker */
+      .discipline-rail {
+        overflow: hidden;
+        border-block: 1.5px solid var(--line);
+        background: color-mix(in srgb, var(--surface) 70%, transparent);
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 8%,
+          #000 92%,
+          transparent
+        );
+      }
+      .discipline-track {
+        display: flex;
+        width: max-content;
+        gap: 0;
+        animation: rail-scroll 32s linear infinite;
+      }
+      .discipline-track:hover {
+        animation-play-state: paused;
+      }
+      .discipline-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.95rem 1.75rem;
+        white-space: nowrap;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .discipline-item i {
+        color: var(--accent);
+        font-size: 0.7rem;
+      }
+      .discipline-item strong {
+        color: var(--ink);
+        font-weight: 700;
+      }
+      @keyframes rail-scroll {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Expertise domains — editorial, not cards */
+      .domain-board {
+        display: grid;
+        gap: 0;
+        border-top: 1.5px solid var(--line);
+      }
+      .domain-row {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1.25rem 1.75rem;
+        align-items: start;
+        padding: 1.75rem 0;
+        border-bottom: 1.5px solid var(--line);
+        transition: background 0.3s ease;
+      }
+      @media (min-width: 768px) {
+        .domain-row {
+          grid-template-columns: 5.5rem 11rem 1fr;
+          gap: 1.5rem 2rem;
+          align-items: center;
+          padding: 2rem 0.5rem;
+        }
+      }
+      .domain-row:hover {
+        background: color-mix(in srgb, var(--accent-soft) 45%, transparent);
+      }
+      .domain-index {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 1.65rem;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1;
+        padding-top: 0.15rem;
+      }
+      .domain-name {
+        font-family: Fraunces, Georgia, serif;
+        font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+      }
+      .domain-copy {
+        color: var(--muted);
+        font-size: 0.98rem;
+        line-height: 1.65;
+        max-width: 38rem;
+      }
+      .domain-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem 0.7rem;
+        margin-top: 0.85rem;
+      }
+      .domain-tags span {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .domain-tags span:not(:last-child)::after {
+        content: "·";
+        margin-left: 0.7rem;
+        color: var(--line);
+      }
+
+      /* Hero availability chip */
+      .avail-dot {
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 50%;
+        background: #16a34a;
+        box-shadow: 0 0 0 4px color-mix(in srgb, #16a34a 22%, transparent);
+        animation: avail-pulse 2.2s ease-in-out infinite;
+      }
+      @keyframes avail-pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 4px color-mix(in srgb, #16a34a 22%, transparent);
+        }
+        50% {
+          box-shadow: 0 0 0 7px color-mix(in srgb, #16a34a 10%, transparent);
+        }
+      }
+
+      /* Metric strip under hero */
+      .metric-strip {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem 1.5rem;
+        margin-top: 2.5rem;
+        padding-top: 1.75rem;
+        border-top: 1.5px solid var(--line);
+      }
+      @media (min-width: 640px) {
+        .metric-strip {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .metric-strip strong {
+        display: block;
+        font-family: Fraunces, Georgia, serif;
+        font-size: 1.85rem;
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      .metric-strip span {
+        display: block;
+        margin-top: 0.4rem;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .discipline-track,
+        .avail-dot {
+          animation: none !important;
+        }
+      }
+
+      /* Pricing */
+      .currency-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 1.15rem;
+        border: 1.5px solid var(--line);
+        border-radius: 0.65rem;
+        background: var(--surface);
+      }
+      .currency-bar p {
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.45;
+        max-width: 28rem;
+      }
+      .currency-switch {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        padding: 0.3rem;
+        border-radius: 0.5rem;
+        background: var(--paper);
+        border: 1.5px solid var(--line);
+      }
+      .currency-btn {
+        min-width: 3.35rem;
+        padding: 0.5rem 0.7rem;
+        border-radius: 0.35rem;
+        border: 1.5px solid transparent;
+        background: transparent;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .currency-btn:hover {
+        color: var(--ink);
+        border-color: var(--line);
+      }
+      .currency-btn.is-active {
+        background: var(--accent);
+        color: var(--btn-on-accent);
+        border-color: var(--accent);
+      }
+      .price-grid {
+        display: grid;
+        gap: 1.25rem;
+        margin-top: 2rem;
+      }
+      @media (min-width: 900px) {
+        .price-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1.5rem;
+        }
+      }
+      .price-plan {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 1.6rem 1.5rem 1.5rem;
+        border: 1.5px solid var(--line);
+        border-radius: 0.85rem;
+        background: var(--surface);
+        transition:
+          border-color 0.25s,
+          transform 0.25s,
+          box-shadow 0.25s;
+      }
+      .price-plan:hover {
+        border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+        transform: translateY(-3px);
+        box-shadow: 0 16px 36px color-mix(in srgb, var(--ink) 8%, transparent);
+      }
+      .price-plan.is-featured {
+        border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+        background:
+          linear-gradient(
+            160deg,
+            color-mix(in srgb, var(--accent-soft) 70%, var(--surface)),
+            var(--surface) 55%
+          );
+      }
+      .price-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        background: var(--accent-soft);
+        padding: 0.3rem 0.55rem;
+        border-radius: 0.3rem;
+      }
+      .price-plan h3 {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 1.45rem;
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+        padding-right: 5rem;
+      }
+      .price-plan .price-tagline {
+        margin-top: 0.45rem;
+        font-size: 0.92rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+      .price-amount {
+        margin-top: 1.35rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.35rem 0.55rem;
+      }
+      .price-amount .from-label {
+        width: 100%;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .price-amount .value {
+        font-family: Fraunces, Georgia, serif;
+        font-size: clamp(1.85rem, 3vw, 2.25rem);
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      .price-amount .period {
+        font-size: 0.88rem;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .price-plan ul {
+        list-style: none;
+        margin: 1.25rem 0 1.5rem;
+        padding: 0;
+        display: grid;
+        gap: 0.65rem;
+        flex: 1;
+      }
+      .price-plan li {
+        position: relative;
+        padding-left: 1.2rem;
+        font-size: 0.92rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+      .price-plan li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+      .price-note {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.55;
+        text-align: center;
+      }
+      .price-note strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      /* Case study modal */
+      .case-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1.25rem;
+        background: color-mix(in srgb, var(--ink) 55%, transparent);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+      .case-modal.is-open {
+        display: flex;
+      }
+      .case-dialog {
+        width: min(720px, 100%);
+        max-height: min(88vh, 900px);
+        overflow: auto;
+        background: var(--surface);
+        border: 1.5px solid var(--line);
+        border-radius: 0.85rem;
+        padding: 1.5rem 1.35rem 1.6rem;
+        box-shadow: 0 24px 60px color-mix(in srgb, #000 28%, transparent);
+        animation: skill-panel-in 0.3s ease both;
+      }
+      @media (min-width: 640px) {
+        .case-dialog {
+          padding: 1.85rem 2rem 2rem;
+        }
+      }
+      .case-dialog-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      .case-dialog-top h3 {
+        font-family: Fraunces, Georgia, serif;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+      }
+      .case-close {
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 0.4rem;
+        border: 1.5px solid var(--line);
+        background: var(--paper);
+        color: var(--ink);
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      .case-close:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .case-meta {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 1.25rem;
+      }
+      .case-grid {
+        display: grid;
+        gap: 1.1rem;
+      }
+      .case-block h4 {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.4rem;
+      }
+      .case-block p,
+      .case-block li {
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+      .case-block ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.45rem;
+      }
+      .case-block li {
+        position: relative;
+        padding-left: 0.95rem;
+      }
+      .case-block li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+      .case-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        margin-top: 1.5rem;
+      }
+      .hex-card .project-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1rem;
+        justify-content: center;
+        align-items: center;
+      }
+      .case-trigger {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        font: inherit;
+      }
+
+      /* LAPSSIM visual */
+      .lapsim-visual {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 30% 20%, rgba(56, 189, 248, 0.25), transparent 45%),
+          radial-gradient(circle at 70% 80%, rgba(14, 165, 233, 0.18), transparent 40%),
+          linear-gradient(160deg, #0b1220, #12304a 55%, #0f172a);
+        color: #e8eef7;
+        text-align: center;
+        padding: 1rem;
+      }
+      .lapsim-visual strong {
+        display: block;
+        font-family: Fraunces, Georgia, serif;
+        font-size: 1.35rem;
+        letter-spacing: 0.08em;
+      }
+      .lapsim-visual span {
+        display: block;
+        margin-top: 0.35rem;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #7dd3fc;
+      }
+
+      /* Research */
+      .research-list {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+      }
+      .research-item {
+        padding: 1.6rem 0 1.75rem;
+        border-top: 1.5px solid var(--line);
+      }
+      .research-item:last-child {
+        border-bottom: 1.5px solid var(--line);
+      }
+      .research-top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.55rem 0.85rem;
+        margin-bottom: 0.75rem;
+      }
+      .research-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .research-status::before {
+        content: "";
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
+      }
+      .research-type {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .research-item h3 {
+        font-family: Fraunces, Georgia, serif;
+        font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+        max-width: 48rem;
+      }
+      .research-item > p {
+        margin-top: 0.75rem;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.65;
+        max-width: 46rem;
+      }
+      .research-points {
+        list-style: none;
+        margin: 1.1rem 0 0;
+        padding: 0;
+        display: grid;
+        gap: 0.55rem;
+        max-width: 46rem;
+      }
+      .research-points li {
+        position: relative;
+        padding-left: 0.95rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+      .research-points li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+      .research-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem 0.7rem;
+        margin-top: 1.1rem;
+      }
+      .research-tags span {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .research-tags span:not(:last-child)::after {
+        content: "·";
+        margin-left: 0.7rem;
+        color: var(--line);
+      }
+
+      /* Testimonials */
+      .quote-grid {
+        display: grid;
+        gap: 1.25rem;
+      }
+      @media (min-width: 900px) {
+        .quote-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+      .quote-item {
+        padding: 1.5rem 1.35rem;
+        border-top: 2px solid var(--accent);
+        border-bottom: 1.5px solid var(--line);
+        background: transparent;
+      }
+      .quote-item blockquote {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 1.15rem;
+        font-weight: 500;
+        line-height: 1.45;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+      }
+      .quote-item footer {
+        margin-top: 1.1rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+      .quote-item footer strong {
+        display: block;
+        color: var(--ink);
+        font-weight: 700;
+        margin-bottom: 0.15rem;
+      }
+
+      /* Outcome chips under about */
+      .outcome-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85rem;
+        margin-top: 1.75rem;
+        max-width: 36rem;
+      }
+      @media (min-width: 640px) {
+        .outcome-row {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+      .outcome-item {
+        padding: 0.85rem 0.75rem;
+        border-left: 2px solid var(--accent);
+        background: color-mix(in srgb, var(--surface) 70%, transparent);
+      }
+      .outcome-item strong {
+        display: block;
+        font-family: Fraunces, Georgia, serif;
+        font-size: 1.35rem;
+        color: var(--ink);
+        line-height: 1;
+      }
+      .outcome-item span {
+        display: block;
+        margin-top: 0.35rem;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--muted);
+        line-height: 1.35;
+      }
+
+      /* Brand mark */
+      .brand-mark {
+        max-width: min(58vw, 14.5rem);
+        white-space: normal;
+        line-height: 1.15;
+      }
+      @media (min-width: 480px) {
+        .brand-mark {
+          max-width: none;
+          white-space: nowrap;
+        }
+      }
+
+      /* Mobile pixel polish */
+      @media (max-width: 639px) {
+        .site-wrap {
+          padding-inline: 1.1rem;
+        }
+        #home {
+          padding-top: 5.5rem;
+          padding-bottom: 3rem;
+          min-height: auto;
+        }
+        #home .btn-primary,
+        #home .btn-ghost {
+          width: 100%;
+          min-height: 3rem;
+          padding-inline: 1.1rem;
+        }
+        #home h1 {
+          font-size: clamp(1.05rem, 5.1vw, 1.7rem);
+          letter-spacing: -0.02em;
+          white-space: nowrap;
+          max-width: 100%;
+        }
+        .section-kicker {
+          letter-spacing: 0.1em;
+          line-height: 1.45;
+        }
+        .metric-strip {
+          gap: 0.85rem 1rem;
+          margin-top: 1.75rem;
+          padding-top: 1.25rem;
+        }
+        .metric-strip strong {
+          font-size: 1.45rem;
+        }
+        .portrait-stage {
+          width: min(220px, 62vw);
+          height: min(220px, 62vw);
+          margin-top: 0.5rem;
+        }
+        .currency-bar {
+          flex-direction: column;
+          align-items: stretch;
+          padding: 1rem;
+        }
+        .currency-switch {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 0.35rem;
+        }
+        .currency-btn {
+          min-width: 0;
+          width: 100%;
+          justify-content: center;
+          display: inline-flex;
+        }
+        .price-plan {
+          padding: 1.35rem 1.15rem 1.25rem;
+        }
+        .price-plan h3 {
+          padding-right: 4.75rem;
+          font-size: 1.3rem;
+        }
+        .price-badge {
+          top: 0.85rem;
+          right: 0.85rem;
+          font-size: 0.62rem;
+          padding: 0.28rem 0.45rem;
+        }
+        .skill-tabs {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          overflow: visible;
+          gap: 0.5rem;
+          padding-bottom: 0;
+        }
+        .skill-tab {
+          width: 100%;
+          white-space: normal;
+          line-height: 1.25;
+          min-height: 2.85rem;
+          padding: 0.65rem 0.7rem;
+          font-size: 0.8rem;
+        }
+        .skill-panel {
+          padding: 1.25rem 1.1rem 1.35rem;
+        }
+        .skill-panel-head {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.35rem;
+        }
+        .domain-row {
+          grid-template-columns: 2.5rem 1fr;
+          gap: 0.35rem 0.85rem;
+          padding: 1.35rem 0;
+        }
+        .domain-index {
+          font-size: 1.25rem;
+        }
+        .domain-name {
+          grid-column: 2;
+          font-size: 1.2rem;
+        }
+        .domain-row > div {
+          grid-column: 1 / -1;
+        }
+        .research-item {
+          padding: 1.25rem 0 1.4rem;
+        }
+        .research-item h3 {
+          font-size: 1.2rem;
+          overflow-wrap: anywhere;
+          word-break: break-word;
+        }
+        .research-item > p,
+        .research-points li {
+          font-size: 0.92rem;
+        }
+        .hex-grid {
+          gap: 2rem 1rem;
+        }
+        .hex-card {
+          width: min(100%, 320px);
+        }
+        .case-dialog {
+          padding: 1.2rem 1.05rem 1.3rem;
+          max-height: min(90vh, 900px);
+        }
+        .case-actions .btn-primary,
+        .case-actions .btn-ghost {
+          width: 100%;
+        }
+        .edu-diploma {
+          margin-left: 1.5rem;
+          padding: 1rem 1rem 1rem 1.1rem;
+        }
+        .edu-diploma h4 {
+          font-size: 1.05rem;
+          overflow-wrap: anywhere;
+        }
+        .edu-diploma .edu-school {
+          overflow-wrap: anywhere;
+          word-break: break-word;
+        }
+        .ach-medal {
+          grid-template-columns: auto 1fr;
+          gap: 0.75rem;
+          padding: 1rem 0.95rem;
+        }
+        .ach-medal h4 {
+          font-size: 0.9rem;
+          padding-right: 0.5rem;
+        }
+        .ach-ribbon {
+          display: none;
+        }
+        .form-input {
+          font-size: 1rem;
+        }
+        .wa-float {
+          right: max(0.85rem, env(safe-area-inset-right));
+          bottom: max(0.85rem, env(safe-area-inset-bottom));
+          width: 3.15rem;
+          height: 3.15rem;
+        }
+        .page {
+          padding-bottom: 4.5rem;
+        }
+        footer .site-wrap {
+          text-align: center;
+        }
+        .outcome-row {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .quote-item {
+          padding: 1.25rem 0.15rem 1.35rem;
+        }
+        .quote-item blockquote {
+          font-size: 1.05rem;
+        }
+        .discipline-item {
+          padding: 0.85rem 1.25rem;
+          font-size: 0.72rem;
+        }
+      }
+
+      @media (max-width: 379px) {
+        .brand-mark {
+          font-size: 0.92rem;
+          max-width: 11.5rem;
+        }
+        .currency-switch {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .skill-tabs {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (min-width: 640px) and (max-width: 899px) {
+        .skill-tabs {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          overflow: visible;
+          gap: 0.5rem;
+        }
+        .skill-tab {
+          width: 100%;
+          white-space: normal;
+          line-height: 1.25;
+        }
+      }
     </style>
   </head>
 
@@ -1438,21 +2329,25 @@
       <!-- NAV -->
       <nav id="nav-bar" class="fixed w-full z-50 top-0 left-0">
         <div
-          class="site-wrap flex items-center justify-between h-16 lg:h-[72px]"
+          class="site-wrap flex items-center justify-between gap-3 h-16 xl:h-[72px]"
         >
-          <a href="#home" class="font-display text-xl font-semibold tracking-tight text-ink">
-            Ahmad <span class="text-accent">Mobeen</span>
+          <a href="#home" class="brand-mark font-display text-[0.98rem] sm:text-lg font-semibold tracking-tight text-ink">
+            Muhammad Ahmad
+            <span class="text-accent">Mobeen</span>
           </a>
 
-          <div class="hidden lg:flex items-center gap-9">
+          <div class="hidden xl:flex items-center gap-6">
             <a href="#home" class="nav-link">Home</a>
             <a href="#about" class="nav-link">About</a>
+            <a href="#expertise" class="nav-link">Expertise</a>
+            <a href="#research" class="nav-link">Research</a>
             <a href="#projects" class="nav-link">Projects</a>
             <a href="#skills" class="nav-link">Skills</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
             <a href="#contact" class="nav-link">Contact</a>
           </div>
 
-          <div class="hidden lg:flex items-center gap-2">
+          <div class="hidden xl:flex items-center gap-2">
             <button
               type="button"
               class="icon-btn theme-toggle"
@@ -1471,10 +2366,10 @@
             >
               <i class="fab fa-github text-lg"></i>
             </a>
-            <a href="#contact" class="btn-primary text-sm py-2.5 px-5 ml-1">Hire Me</a>
+            <a href="#pricing" class="btn-primary text-sm py-2.5 px-5 ml-1">Hire Me</a>
           </div>
 
-          <div class="flex lg:hidden items-center gap-1">
+          <div class="flex xl:hidden items-center gap-1 shrink-0">
             <button
               type="button"
               class="icon-btn theme-toggle"
@@ -1486,23 +2381,27 @@
             </button>
             <button
               id="burger"
-              class="p-2 text-ink"
+              class="icon-btn"
               aria-label="Toggle menu"
             >
-              <i class="fa-solid fa-bars text-xl"></i>
+              <i class="fa-solid fa-bars text-lg"></i>
             </button>
           </div>
         </div>
 
         <div
           id="mobile-nav"
-          class="lg:hidden hidden px-5 pb-6 pt-2 flex flex-col gap-1 border-t border-line bg-paper/95 backdrop-blur-md"
+          class="xl:hidden hidden px-5 pb-6 pt-2 flex flex-col gap-1 border-t border-line bg-paper/95 backdrop-blur-md"
         >
-          <a href="#home" class="py-3 text-sm font-medium text-ink">Home</a>
-          <a href="#about" class="py-3 text-sm font-medium text-ink">About</a>
-          <a href="#projects" class="py-3 text-sm font-medium text-ink">Projects</a>
-          <a href="#skills" class="py-3 text-sm font-medium text-ink">Skills</a>
-          <a href="#contact" class="py-3 text-sm font-medium text-ink">Contact</a>
+          <a href="#home" class="py-3.5 text-sm font-medium text-ink">Home</a>
+          <a href="#about" class="py-3.5 text-sm font-medium text-ink">About</a>
+          <a href="#expertise" class="py-3.5 text-sm font-medium text-ink">Expertise</a>
+          <a href="#research" class="py-3.5 text-sm font-medium text-ink">Research</a>
+          <a href="#projects" class="py-3.5 text-sm font-medium text-ink">Projects</a>
+          <a href="#skills" class="py-3.5 text-sm font-medium text-ink">Skills</a>
+          <a href="#pricing" class="py-3.5 text-sm font-medium text-ink">Pricing</a>
+          <a href="#contact" class="py-3.5 text-sm font-medium text-ink">Contact</a>
+          <a href="#pricing" class="btn-primary mt-3 w-full justify-center">Hire Me</a>
         </div>
       </nav>
 
@@ -1515,31 +2414,42 @@
           class="site-wrap w-full grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center"
         >
           <div>
-            <p class="section-kicker hero-rise mb-5 sm:mb-6">
-              Software Engineer · VR &amp; Full Stack
-            </p>
+            <div
+              class="hero-rise mb-5 sm:mb-6 inline-flex items-center gap-2.5 text-sm font-semibold text-muted"
+            >
+              <span class="avail-dot" aria-hidden="true"></span>
+              Open to full-time &amp; freelance
+            </div>
 
             <h1
-              class="font-display text-[clamp(2.35rem,6.2vw,4.25rem)] font-semibold leading-[1.05] tracking-tight text-ink hero-rise hero-rise-d1"
+              class="font-display text-[clamp(1.45rem,3.8vw,3.15rem)] font-semibold leading-[1.15] tracking-tight text-ink hero-rise hero-rise-d1 uppercase"
             >
-              Muhammad<br />Ahmad Mobeen
+              Muhammad Ahmad <span class="text-accent">Mobeen</span>
             </h1>
+
+            <p class="mt-4 section-kicker hero-rise hero-rise-d2 max-w-xl">
+              <span class="sm:hidden">Software Engineer · VR · AI</span>
+              <span class="hidden sm:inline"
+                >Software Engineer · Virtual Reality · Artificial Intelligence</span
+              >
+            </p>
 
             <p
               class="mt-6 sm:mt-7 text-base sm:text-xl text-ink/70 max-w-xl leading-relaxed hero-rise hero-rise-d2"
             >
-              Full-stack engineer shipping production apps with React, Next.js,
-              Node.js, and TypeScript — plus VR experiences with Unity.
+              I design and ship production systems across the stack — from
+              scalable web platforms to immersive VR training and AI-assisted
+              product experiences.
             </p>
 
-            <div class="mt-8 sm:mt-10 flex flex-wrap gap-3 hero-rise hero-rise-d3">
+            <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-3 hero-rise hero-rise-d3">
               <a href="#projects" class="btn-primary">
-                View projects
+                View selected work
                 <i class="fa-solid fa-arrow-right text-xs"></i>
               </a>
-              <a href="#contact" class="btn-ghost">Get in touch</a>
+              <a href="#expertise" class="btn-ghost">Explore expertise</a>
               <a
-                href="./assets/Ahmad_Mobeen_CV.pdf"
+                href="./assets/Muhammad_Ahmad_Mobeen_CV.html"
                 target="_blank"
                 rel="noopener"
                 class="btn-ghost"
@@ -1547,6 +2457,25 @@
                 <i class="fa-solid fa-file-arrow-down text-xs"></i>
                 Download CV
               </a>
+            </div>
+
+            <div class="metric-strip hero-rise hero-rise-d4">
+              <div>
+                <strong>2+</strong>
+                <span>Years shipping</span>
+              </div>
+              <div>
+                <strong>5+</strong>
+                <span>Production apps</span>
+              </div>
+              <div>
+                <strong>3</strong>
+                <span>Core disciplines</span>
+              </div>
+              <div>
+                <strong>3</strong>
+                <span>Competition awards</span>
+              </div>
             </div>
           </div>
 
@@ -1557,13 +2486,75 @@
               <span class="portrait-ring portrait-ring-3" aria-hidden="true"></span>
               <img
                 src="./images/main%20image%201.jpeg"
-                alt="Muhammad Ahmad Mobeen"
+                alt="Muhammad Ahmad Mobeen — Software Engineer"
                 class="portrait-photo"
               />
             </div>
           </div>
         </div>
       </section>
+
+      <!-- DISCIPLINE RAIL -->
+      <div class="discipline-rail" aria-hidden="true">
+        <div class="discipline-track">
+          <span class="discipline-item"
+            ><i class="fa-solid fa-code"></i>
+            <strong>Software Engineering</strong></span
+          >
+          <span class="discipline-item"
+            ><i class="fa-solid fa-vr-cardboard"></i>
+            <strong>Virtual Reality</strong></span
+          >
+          <span class="discipline-item"
+            ><i class="fa-solid fa-brain"></i>
+            <strong>Artificial Intelligence</strong></span
+          >
+          <span class="discipline-item"
+            ><i class="fa-solid fa-layer-group"></i>
+            <strong>Full Stack Systems</strong></span
+          >
+          <span class="discipline-item"
+            ><i class="fa-solid fa-cloud"></i>
+            <strong>Cloud &amp; DevOps</strong></span
+          >
+          <span class="discipline-item"
+            ><i class="fa-solid fa-database"></i>
+            <strong>Data Architecture</strong></span
+          >
+          <span class="discipline-item"
+            ><i class="fa-solid fa-mobile-screen"></i>
+            <strong>Product Engineering</strong></span
+          >
+          <span class="discipline-item"
+            ><i class="fa-solid fa-code"></i>
+            <strong>Software Engineering</strong></span
+          >
+          <span class="discipline-item"
+            ><i class="fa-solid fa-vr-cardboard"></i>
+            <strong>Virtual Reality</strong></span
+          >
+          <span class="discipline-item"
+            ><i class="fa-solid fa-brain"></i>
+            <strong>Artificial Intelligence</strong></span
+          >
+          <span class="discipline-item"
+            ><i class="fa-solid fa-layer-group"></i>
+            <strong>Full Stack Systems</strong></span
+          >
+          <span class="discipline-item"
+            ><i class="fa-solid fa-cloud"></i>
+            <strong>Cloud &amp; DevOps</strong></span
+          >
+          <span class="discipline-item"
+            ><i class="fa-solid fa-database"></i>
+            <strong>Data Architecture</strong></span
+          >
+          <span class="discipline-item"
+            ><i class="fa-solid fa-mobile-screen"></i>
+            <strong>Product Engineering</strong></span
+          >
+        </div>
+      </div>
 
       <!-- ABOUT -->
       <section id="about" class="py-24 lg:py-32 border-t border-line">
@@ -1574,19 +2565,43 @@
               <h2
                 class="font-display text-4xl md:text-5xl font-semibold tracking-tight text-ink leading-tight"
               >
-                Built for clarity and scale
+                Engineer first.<br />Disciplines many.
               </h2>
             </div>
 
             <div class="lg:col-span-8 reveal" data-delay="1">
               <p class="text-lg text-muted leading-relaxed max-w-2xl">
-                Results-driven Full Stack Software Engineer with 2+ years of
-                experience designing, developing, and deploying 5+ production web
-                applications using Next.js, React.js, Node.js, TypeScript, and
-                the MERN stack. Built e-commerce platforms, customer-facing
-                portals, and RESTful APIs that improved performance, scalability,
-                and SEO.
+                Results-driven Software Engineer with 2+ years shipping
+                production systems across web, immersive VR, and AI-assisted
+                product work. I build with Next.js, React, Node.js, TypeScript,
+                and the MERN stack — then extend into Unity-based VR training and
+                intelligent features that make products feel sharper and more
+                useful.
               </p>
+              <p class="mt-5 text-lg text-muted leading-relaxed max-w-2xl">
+                From e-commerce platforms and customer portals to surgical VR
+                simulation, I care about clean architecture, measurable
+                performance, and interfaces people actually enjoy using.
+              </p>
+
+              <div class="outcome-row">
+                <div class="outcome-item">
+                  <strong>5+</strong>
+                  <span>Apps in production</span>
+                </div>
+                <div class="outcome-item">
+                  <strong>2+</strong>
+                  <span>Years shipping</span>
+                </div>
+                <div class="outcome-item">
+                  <strong>3</strong>
+                  <span>Competition awards</span>
+                </div>
+                <div class="outcome-item">
+                  <strong>3.44</strong>
+                  <span>BS CS CGPA</span>
+                </div>
+              </div>
 
               <div class="mt-10 grid sm:grid-cols-2 gap-8 max-w-2xl">
                 <div>
@@ -1632,10 +2647,10 @@
                     At a glance
                   </p>
                   <ul class="space-y-2 text-sm text-muted">
-                    <li>5+ production apps shipped</li>
-                    <li>MERN · Next.js · TypeScript · VR</li>
-                    <li>BS Computer Science · CGPA 3.44</li>
-                    <li>3 competition awards</li>
+                    <li>Software Engineering · VR · AI</li>
+                    <li>Active research in Trustworthy AI &amp; IoT IDS</li>
+                    <li>MERN · Next.js · TypeScript · Unity</li>
+                    <li>Open to full-time &amp; freelance</li>
                   </ul>
                 </div>
               </div>
@@ -1722,7 +2737,7 @@
                     2022 – 2026
                   </p>
                   <h4>BS Computer Science</h4>
-                  <p class="edu-school">KICSIT (IST Sub-Campus)</p>
+                  <p class="edu-school">INSTITUTE OF SPACE TECHNOLOGY (KICSIT Kahuta Campus)</p>
                   <div class="edu-seal" aria-label="CGPA 3.44">
                     <div>
                       <strong>3.44</strong>
@@ -1789,19 +2804,242 @@
         </div>
       </section>
 
+      <!-- EXPERTISE -->
+      <section id="expertise" class="py-24 lg:py-32 border-t border-line">
+        <div class="site-wrap">
+          <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-10 lg:mb-14">
+            <div class="lg:col-span-5 reveal">
+              <p class="section-kicker mb-4">Expertise</p>
+              <h2
+                class="font-display text-4xl md:text-5xl font-semibold tracking-tight text-ink leading-tight"
+              >
+                Multi-discipline engineering
+              </h2>
+            </div>
+            <div class="lg:col-span-7 reveal" data-delay="1">
+              <p class="text-lg text-muted leading-relaxed max-w-2xl mt-1 lg:mt-10">
+                One engineer, several depth areas — connected by the same
+                standard: ship reliable software that looks intentional and
+                performs under real use.
+              </p>
+            </div>
+          </div>
+
+          <div class="domain-board reveal" data-delay="2">
+            <article class="domain-row">
+              <span class="domain-index">01</span>
+              <h3 class="domain-name">Software Engineering</h3>
+              <div>
+                <p class="domain-copy">
+                  End-to-end product engineering — architecture, APIs,
+                  authentication, performance, SEO, and maintainable frontends
+                  that scale with the business.
+                </p>
+                <div class="domain-tags">
+                  <span>React / Next.js</span>
+                  <span>Node.js</span>
+                  <span>TypeScript</span>
+                  <span>System Design</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="domain-row">
+              <span class="domain-index">02</span>
+              <h3 class="domain-name">Virtual Reality</h3>
+              <div>
+                <p class="domain-copy">
+                  Immersive training and simulation experiences with Unity,
+                  Blender, and Meta Quest — focused on skill practice, spatial
+                  interaction, and measurable learning outcomes.
+                </p>
+                <div class="domain-tags">
+                  <span>Unity</span>
+                  <span>C#</span>
+                  <span>Blender</span>
+                  <span>Meta Quest</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="domain-row">
+              <span class="domain-index">03</span>
+              <h3 class="domain-name">Artificial Intelligence</h3>
+              <div>
+                <p class="domain-copy">
+                  Practical AI integration for modern products — intelligent
+                  workflows, prompt-driven features, and data-aware interfaces
+                  that augment users instead of replacing clarity.
+                </p>
+                <div class="domain-tags">
+                  <span>LLM Integration</span>
+                  <span>Prompt Systems</span>
+                  <span>Python</span>
+                  <span>Automation</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="domain-row">
+              <span class="domain-index">04</span>
+              <h3 class="domain-name">Full Stack &amp; Cloud</h3>
+              <div>
+                <p class="domain-copy">
+                  MERN platforms, REST APIs, JWT auth, CI/CD pipelines, and cloud
+                  deployments on Vercel, Render, and AWS — from local prototype
+                  to production release.
+                </p>
+                <div class="domain-tags">
+                  <span>MongoDB</span>
+                  <span>CI/CD</span>
+                  <span>AWS</span>
+                  <span>Vercel</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="domain-row">
+              <span class="domain-index">05</span>
+              <h3 class="domain-name">Product &amp; Commerce</h3>
+              <div>
+                <p class="domain-copy">
+                  Customer-facing stores and content platforms with WordPress,
+                  WooCommerce, and custom React storefronts — optimized for
+                  conversion, SEO, and mobile-first UX.
+                </p>
+                <div class="domain-tags">
+                  <span>E-commerce</span>
+                  <span>WordPress</span>
+                  <span>WooCommerce</span>
+                  <span>UX</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESEARCH -->
+      <section id="research" class="py-24 lg:py-32 border-t border-line bg-surface/60">
+        <div class="site-wrap">
+          <div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
+            <div class="lg:col-span-5 reveal">
+              <p class="section-kicker mb-4">Research</p>
+              <h2
+                class="font-display text-4xl md:text-5xl font-semibold tracking-tight text-ink leading-tight"
+              >
+                Active research in trustworthy AI &amp; secure IoT
+              </h2>
+            </div>
+            <div class="lg:col-span-7 reveal" data-delay="1">
+              <p class="text-lg text-muted leading-relaxed max-w-2xl mt-1 lg:mt-10">
+                Alongside product engineering, I’m developing research on
+                explainable, robust, and privacy-aware AI for cybersecurity —
+                with a second track on lightweight federated detection for
+                constrained IoT networks.
+              </p>
+            </div>
+          </div>
+
+          <div class="research-list">
+            <article class="research-item reveal" data-delay="1">
+              <div class="research-top">
+                <span class="research-status">In progress</span>
+                <span class="research-type">Systematic literature review</span>
+              </div>
+              <h3>
+                Trustworthy AI for Cybersecurity: Explainability, Robustness,
+                and Privacy
+              </h3>
+              <p>
+                A structured review of how trustworthy-AI properties are studied
+                in cybersecurity — covering explainability, adversarial
+                robustness, and privacy-preserving learning across intrusion
+                detection, malware analysis, anomaly detection, and related
+                tasks.
+              </p>
+              <ul class="research-points">
+                <li>
+                  Screening and synthesis framed around PRISMA-style review
+                  methodology across recent AI/ML cybersecurity literature.
+                </li>
+                <li>
+                  Multidimensional taxonomy and conceptual framing for
+                  explainability, robustness, privacy, integrated, and
+                  deployment-oriented approaches.
+                </li>
+                <li>
+                  Focus on evaluation gaps: accuracy vs interpretability,
+                  robustness, privacy, analyst usability, and computational
+                  cost.
+                </li>
+              </ul>
+              <div class="research-tags">
+                <span>Trustworthy AI</span>
+                <span>XAI</span>
+                <span>Adversarial Robustness</span>
+                <span>Privacy-Preserving ML</span>
+                <span>Cybersecurity</span>
+              </div>
+            </article>
+
+            <article class="research-item reveal" data-delay="2">
+              <div class="research-top">
+                <span class="research-status">In progress</span>
+                <span class="research-type">Empirical study</span>
+              </div>
+              <h3>
+                Lightweight Federated Intrusion Detection with Post-hoc
+                Explainability for Resource-Constrained IoT Networks
+              </h3>
+              <p>
+                Evaluating a compact federated IDS for IoT settings where
+                devices cannot afford heavy models — measuring detection
+                quality, resource use, communication cost, and post-hoc
+                feature attributions for analyst-facing clarity.
+              </p>
+              <ul class="research-points">
+                <li>
+                  Federated Averaging across non-IID clients on a multi-class
+                  IoT intrusion benchmark, with mutual-information feature
+                  selection.
+                </li>
+                <li>
+                  Strong aggregate metrics in the studied setup (~91.4%
+                  accuracy) while remaining lightweight in latency and memory;
+                  pruning retains most performance.
+                </li>
+                <li>
+                  Post-hoc SHAP attributions for feature-level explanation,
+                  with open challenges around minority-class detection and
+                  explanation fidelity.
+                </li>
+              </ul>
+              <div class="research-tags">
+                <span>Federated Learning</span>
+                <span>Intrusion Detection</span>
+                <span>IoT Security</span>
+                <span>Explainable AI</span>
+                <span>Edge Constraints</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <!-- PROJECTS -->
-      <section id="projects" class="py-24 lg:py-32 border-t border-line bg-surface/60">
+      <section id="projects" class="py-24 lg:py-32 border-t border-line">
         <div class="site-wrap">
           <div class="max-w-3xl mb-14 lg:mb-16 reveal">
-            <p class="section-kicker mb-4">Work</p>
+            <p class="section-kicker mb-4">Selected work</p>
             <h2
               class="font-display text-4xl md:text-5xl font-semibold tracking-tight text-ink leading-tight"
             >
-              Featured projects
+              Projects that prove the stack
             </h2>
             <p class="mt-5 text-muted text-lg leading-relaxed">
-              Production-grade applications built with modern stacks, real
-              users, and clean code.
+              Web platforms, commerce systems, and immersive VR — each built for
+              real users, clean architecture, and production readiness.
             </p>
           </div>
 
@@ -1821,18 +3059,24 @@
               <p class="hex-meta">React · Firebase · Tailwind</p>
               <h3>FreshBite</h3>
               <p>
-                Grocery ordering app with real-time data, Firebase auth, and a
-                fully responsive layout.
+                Grocery ordering with real-time Firebase data, auth, and a
+                mobile-first shopping flow.
               </p>
-              <a
-                href="https://ahmadcr17dev.github.io/freshbiteapp_Reactjs/"
-                target="_blank"
-                rel="noopener"
-                class="project-link"
-              >
-                Live demo
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-              </a>
+              <div class="project-actions">
+                <button type="button" class="project-link case-trigger" data-case="freshbite">
+                  Case study
+                  <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+                <a
+                  href="https://ahmadcr17dev.github.io/freshbiteapp_Reactjs/"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link"
+                >
+                  Live demo
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+              </div>
             </article>
 
             <article class="hex-card reveal" data-delay="2">
@@ -1850,18 +3094,24 @@
               <p class="hex-meta">MERN Stack</p>
               <h3>UrbanStich</h3>
               <p>
-                Fashion e-commerce store with cart, product management, charts,
-                and mobile-first UI.
+                Fashion e-commerce with cart, product admin, charts, and
+                end-to-end MERN architecture.
               </p>
-              <a
-                href="https://urban-stich-mern.vercel.app/"
-                target="_blank"
-                rel="noopener"
-                class="project-link"
-              >
-                Live demo
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-              </a>
+              <div class="project-actions">
+                <button type="button" class="project-link case-trigger" data-case="urbanstich">
+                  Case study
+                  <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+                <a
+                  href="https://urban-stich-mern.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link"
+                >
+                  Live demo
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+              </div>
             </article>
 
             <article class="hex-card reveal" data-delay="3">
@@ -1879,34 +3129,51 @@
               <p class="hex-meta">MERN · Tailwind</p>
               <h3>KFC Clone</h3>
               <p>
-                Full-stack food ordering platform with catalogue, cart, checkout,
-                and REST APIs.
+                Food ordering platform with catalogue, cart, checkout flow, and
+                REST APIs.
               </p>
-              <a
-                href="https://kicksandfits.lovestoblog.com/"
-                target="_blank"
-                rel="noopener"
-                class="project-link"
-              >
-                Live demo
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-              </a>
+              <div class="project-actions">
+                <button type="button" class="project-link case-trigger" data-case="kfc">
+                  Case study
+                  <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+                <a
+                  href="https://kicksandfits.lovestoblog.com/"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link"
+                >
+                  Live demo
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+              </div>
             </article>
 
             <article class="hex-card reveal" data-delay="1">
               <div class="hex-frame">
                 <div class="hex-shape">
                   <div class="hex-inner">
-                    <div class="hex-placeholder">LAPSSIM</div>
+                    <div class="lapsim-visual" aria-hidden="true">
+                      <div>
+                        <strong>LAPSSIM</strong>
+                        <span>VR Surgical Training</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <p class="hex-meta">Unity · Blender · Meta Quest</p>
+              <p class="hex-meta">Unity · Blender · Meta Quest · VR</p>
               <h3>LAPSSIM</h3>
               <p>
-                VR simulator for risk-free SILS appendectomy practice with skill
-                tracking metrics.
+                Immersive SILS appendectomy simulator with skill-tracking metrics
+                for risk-free practice.
               </p>
+              <div class="project-actions">
+                <button type="button" class="project-link case-trigger" data-case="lapsim">
+                  Case study
+                  <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+              </div>
             </article>
           </div>
 
@@ -1925,161 +3192,586 @@
       </section>
 
 
-      <!-- SKILLS — radial root tree -->
-      <section id="skills" class="pt-14 pb-16 lg:pt-16 lg:pb-20 border-t border-line">
+      <!-- SKILLS — stack matrix -->
+      <section id="skills" class="py-24 lg:py-32 border-t border-line">
         <div class="site-wrap">
-          <div class="max-w-3xl mb-2 reveal">
-            <p class="section-kicker mb-2">Toolkit</p>
+          <div class="max-w-3xl reveal">
+            <p class="section-kicker mb-4">Toolkit</p>
             <h2
               class="font-display text-4xl md:text-5xl font-semibold tracking-tight text-ink leading-tight"
             >
-              Skills &amp; tools
+              Skills across every layer
             </h2>
+            <p class="mt-4 text-muted text-lg leading-relaxed max-w-2xl">
+              A clear stack map — pick a domain to see depth, tools, and how I
+              apply them in production work.
+            </p>
           </div>
 
-          <div class="skill-fan-wrap reveal">
-            <div class="skill-fan" id="skill-fan">
-              <svg
-                class="skill-fan-svg"
-                id="skill-fan-svg"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              ></svg>
-              <div class="skill-fan-trunk" aria-hidden="true"></div>
-              <div class="skill-fan-root">Full Stack</div>
-
+          <div class="skill-matrix reveal" data-delay="1" id="skill-matrix">
+            <div class="skill-tabs" role="tablist" aria-label="Skill domains">
               <button
                 type="button"
-                class="skill-fan-domain is-active"
-                data-domain="frontend"
-                style="--a: 0deg; --c: #0369a1"
+                class="skill-tab is-active"
+                role="tab"
+                aria-selected="true"
+                aria-controls="skill-panel-frontend"
+                id="skill-tab-frontend"
+                data-panel="frontend"
               >
+                <span class="skill-tab-num">01</span>
                 Frontend
               </button>
               <button
                 type="button"
-                class="skill-fan-domain"
-                data-domain="backend"
-                style="--a: 60deg; --c: #0d9488"
+                class="skill-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="skill-panel-backend"
+                id="skill-tab-backend"
+                data-panel="backend"
               >
-                Backend &amp; APIs
+                <span class="skill-tab-num">02</span>
+                Backend &amp; Data
               </button>
               <button
                 type="button"
-                class="skill-fan-domain"
-                data-domain="databases"
-                style="--a: 120deg; --c: #ca8a04"
+                class="skill-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="skill-panel-ai"
+                id="skill-tab-ai"
+                data-panel="ai"
               >
-                Databases
+                <span class="skill-tab-num">03</span>
+                AI &amp; Intelligence
               </button>
               <button
                 type="button"
-                class="skill-fan-domain"
-                data-domain="cloud"
-                style="--a: 180deg; --c: #7c3aed"
+                class="skill-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="skill-panel-cloud"
+                id="skill-tab-cloud"
+                data-panel="cloud"
               >
+                <span class="skill-tab-num">04</span>
                 Cloud &amp; DevOps
               </button>
               <button
                 type="button"
-                class="skill-fan-domain"
-                data-domain="cms"
-                style="--a: 240deg; --c: #ea580c"
+                class="skill-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="skill-panel-vr"
+                id="skill-tab-vr"
+                data-panel="vr"
               >
-                CMS &amp; Commerce
+                <span class="skill-tab-num">05</span>
+                VR &amp; Immersive
               </button>
               <button
                 type="button"
-                class="skill-fan-domain"
-                data-domain="tools"
-                style="--a: 300deg; --c: #db2777"
+                class="skill-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="skill-panel-tools"
+                id="skill-tab-tools"
+                data-panel="tools"
               >
-                Tools &amp; VR
+                <span class="skill-tab-num">06</span>
+                Tools &amp; CMS
               </button>
+            </div>
+
+            <div class="skill-panels">
+              <div
+                class="skill-panel is-active"
+                role="tabpanel"
+                id="skill-panel-frontend"
+                aria-labelledby="skill-tab-frontend"
+              >
+                <div class="skill-panel-head">
+                  <h3>Frontend Engineering</h3>
+                  <span class="skill-focus">Interface &amp; UX</span>
+                </div>
+                <p>
+                  Component systems, responsive layouts, and performant UI —
+                  built to feel sharp on every device.
+                </p>
+                <div class="skill-meters">
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>React.js / Next.js</span><em>Advanced</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 92%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>TypeScript / JavaScript</span><em>Advanced</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 90%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>Tailwind / CSS Architecture</span><em>Strong</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 88%"></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="skill-chip-label">Also in this layer</p>
+                <div class="skill-chips">
+                  <span>HTML5</span><span>Bootstrap</span><span>Vite</span>
+                  <span>Responsive Design</span><span>SEO-friendly UI</span>
+                </div>
+              </div>
 
               <div
-                class="skill-fan-leaves is-open"
-                data-domain="frontend"
-                style="--n: 9; --da: 0deg; --c: #0369a1"
+                class="skill-panel"
+                role="tabpanel"
+                id="skill-panel-backend"
+                aria-labelledby="skill-tab-backend"
+                hidden
               >
-                <span class="skill-fan-leaf" style="--i: 0">React.js</span>
-                <span class="skill-fan-leaf" style="--i: 1">Next.js</span>
-                <span class="skill-fan-leaf" style="--i: 2">TypeScript</span>
-                <span class="skill-fan-leaf" style="--i: 3">JavaScript</span>
-                <span class="skill-fan-leaf" style="--i: 4">C#</span>
-                <span class="skill-fan-leaf" style="--i: 5">HTML &amp; CSS</span>
-                <span class="skill-fan-leaf" style="--i: 6">Tailwind</span>
-                <span class="skill-fan-leaf" style="--i: 7">Bootstrap</span>
-                <span class="skill-fan-leaf" style="--i: 8">Vite</span>
+                <div class="skill-panel-head">
+                  <h3>Backend &amp; Data</h3>
+                  <span class="skill-focus">APIs &amp; Systems</span>
+                </div>
+                <p>
+                  Reliable server logic, auth, and data layers for products that
+                  need to scale beyond a brochure site.
+                </p>
+                <div class="skill-meters">
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>Node.js / Express</span><em>Advanced</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 90%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>REST APIs / JWT Auth</span><em>Advanced</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 88%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>MongoDB / MySQL</span><em>Strong</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 85%"></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="skill-chip-label">Also in this layer</p>
+                <div class="skill-chips">
+                  <span>Firestore</span><span>Architecture</span>
+                  <span>Query Optimization</span><span>Microservices basics</span>
+                </div>
               </div>
+
               <div
-                class="skill-fan-leaves"
-                data-domain="backend"
-                style="--n: 6; --da: 60deg; --c: #0d9488"
+                class="skill-panel"
+                role="tabpanel"
+                id="skill-panel-ai"
+                aria-labelledby="skill-tab-ai"
+                hidden
               >
-                <span class="skill-fan-leaf" style="--i: 0">Node.js</span>
-                <span class="skill-fan-leaf" style="--i: 1">Express.js</span>
-                <span class="skill-fan-leaf" style="--i: 2">REST APIs</span>
-                <span class="skill-fan-leaf" style="--i: 3">JWT Auth</span>
-                <span class="skill-fan-leaf" style="--i: 4">Microservices</span>
-                <span class="skill-fan-leaf" style="--i: 5">Architecture</span>
+                <div class="skill-panel-head">
+                  <h3>AI &amp; Intelligence</h3>
+                  <span class="skill-focus">Applied AI</span>
+                </div>
+                <p>
+                  Practical AI features that plug into real products — assistants,
+                  automation, and smarter workflows.
+                </p>
+                <div class="skill-meters">
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>LLM APIs / Prompt Systems</span><em>Strong</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 84%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>AI Workflows / Automation</span><em>Strong</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 82%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>Python for tooling</span><em>Working</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 75%"></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="skill-chip-label">Also in this layer</p>
+                <div class="skill-chips">
+                  <span>RAG Basics</span><span>Data Pipelines</span>
+                  <span>Product Integration</span>
+                </div>
               </div>
+
               <div
-                class="skill-fan-leaves"
-                data-domain="databases"
-                style="--n: 5; --da: 120deg; --c: #ca8a04"
+                class="skill-panel"
+                role="tabpanel"
+                id="skill-panel-cloud"
+                aria-labelledby="skill-tab-cloud"
+                hidden
               >
-                <span class="skill-fan-leaf" style="--i: 0">MongoDB</span>
-                <span class="skill-fan-leaf" style="--i: 1">MySQL</span>
-                <span class="skill-fan-leaf" style="--i: 2">Firestore</span>
-                <span class="skill-fan-leaf" style="--i: 3">NoSQL</span>
-                <span class="skill-fan-leaf" style="--i: 4">Query Opt.</span>
+                <div class="skill-panel-head">
+                  <h3>Cloud &amp; DevOps</h3>
+                  <span class="skill-focus">Ship &amp; Operate</span>
+                </div>
+                <p>
+                  From local build to live release — hosting, pipelines, and
+                  monitoring that keep shipping predictable.
+                </p>
+                <div class="skill-meters">
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>Vercel / Render</span><em>Advanced</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 90%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>GitHub Actions / CI/CD</span><em>Strong</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 86%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>AWS EC2 / S3</span><em>Working</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 78%"></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="skill-chip-label">Also in this layer</p>
+                <div class="skill-chips">
+                  <span>Monitoring</span><span>Environment Config</span>
+                  <span>Release Workflows</span>
+                </div>
               </div>
+
               <div
-                class="skill-fan-leaves"
-                data-domain="cloud"
-                style="--n: 6; --da: 180deg; --c: #7c3aed"
+                class="skill-panel"
+                role="tabpanel"
+                id="skill-panel-vr"
+                aria-labelledby="skill-tab-vr"
+                hidden
               >
-                <span class="skill-fan-leaf" style="--i: 0">Vercel</span>
-                <span class="skill-fan-leaf" style="--i: 1">Render</span>
-                <span class="skill-fan-leaf" style="--i: 2">AWS EC2 / S3</span>
-                <span class="skill-fan-leaf" style="--i: 3">GitHub Actions</span>
-                <span class="skill-fan-leaf" style="--i: 4">CI/CD</span>
-                <span class="skill-fan-leaf" style="--i: 5">Monitoring</span>
+                <div class="skill-panel-head">
+                  <h3>VR &amp; Immersive</h3>
+                  <span class="skill-focus">Spatial Experiences</span>
+                </div>
+                <p>
+                  Training and simulation in Unity — focused on interaction,
+                  clarity, and measurable practice outcomes.
+                </p>
+                <div class="skill-meters">
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>Unity / C#</span><em>Strong</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 85%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>Meta Quest / XR Interaction</span><em>Strong</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 82%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>Blender / 3D Assets</span><em>Working</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 74%"></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="skill-chip-label">Also in this layer</p>
+                <div class="skill-chips">
+                  <span>3D Simulation</span><span>Skill Metrics</span>
+                  <span>Training Scenarios</span>
+                </div>
               </div>
+
               <div
-                class="skill-fan-leaves"
-                data-domain="cms"
-                style="--n: 6; --da: 240deg; --c: #ea580c"
+                class="skill-panel"
+                role="tabpanel"
+                id="skill-panel-tools"
+                aria-labelledby="skill-tab-tools"
+                hidden
               >
-                <span class="skill-fan-leaf" style="--i: 0">WordPress</span>
-                <span class="skill-fan-leaf" style="--i: 1">WooCommerce</span>
-                <span class="skill-fan-leaf" style="--i: 2">Elementor</span>
-                <span class="skill-fan-leaf" style="--i: 3">Astra</span>
-                <span class="skill-fan-leaf" style="--i: 4">WpBakery</span>
-                <span class="skill-fan-leaf" style="--i: 5">Divi</span>
-              </div>
-              <div
-                class="skill-fan-leaves"
-                data-domain="tools"
-                style="--n: 6; --da: 300deg; --c: #db2777"
-              >
-                <span class="skill-fan-leaf" style="--i: 0">Git / GitHub</span>
-                <span class="skill-fan-leaf" style="--i: 1">VS Code</span>
-                <span class="skill-fan-leaf" style="--i: 2">Postman</span>
-                <span class="skill-fan-leaf" style="--i: 3">Figma</span>
-                <span class="skill-fan-leaf" style="--i: 4">Unity / Blender</span>
-                <span class="skill-fan-leaf" style="--i: 5">Meta Quest</span>
+                <div class="skill-panel-head">
+                  <h3>Tools &amp; CMS</h3>
+                  <span class="skill-focus">Delivery Stack</span>
+                </div>
+                <p>
+                  Day-to-day engineering tools plus CMS and commerce platforms
+                  for faster client delivery.
+                </p>
+                <div class="skill-meters">
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>Git / GitHub</span><em>Advanced</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 93%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>WordPress / WooCommerce</span><em>Strong</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 86%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-meter">
+                    <div class="skill-meter-top">
+                      <span>Figma / Collaboration</span><em>Strong</em>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--lvl: 80%"></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="skill-chip-label">Also in this layer</p>
+                <div class="skill-chips">
+                  <span>VS Code</span><span>Postman</span><span>Elementor</span>
+                  <span>Agile / Scrum</span>
+                </div>
               </div>
             </div>
-            <p class="skill-fan-hint">
-              Active domain: <strong id="skill-fan-label">Frontend</strong>
-            </p>
           </div>
         </div>
       </section>
 
+
+      <!-- PROOF -->
+      <section id="proof" class="py-24 lg:py-32 border-t border-line bg-surface/60">
+        <div class="site-wrap">
+          <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 mb-12 lg:mb-14">
+            <div class="lg:col-span-5 reveal">
+              <p class="section-kicker mb-4">Social proof</p>
+              <h2
+                class="font-display text-4xl md:text-5xl font-semibold tracking-tight text-ink leading-tight"
+              >
+                How collaborators describe the work
+              </h2>
+            </div>
+            <div class="lg:col-span-7 reveal" data-delay="1">
+              <p class="text-lg text-muted leading-relaxed max-w-xl mt-1 lg:mt-10">
+                Feedback from product and delivery contexts — clear communication,
+                reliable shipping, and polish that holds up in production.
+              </p>
+            </div>
+          </div>
+
+          <div class="quote-grid">
+            <article class="quote-item reveal" data-delay="1">
+              <blockquote>
+                “Ahmad ships clean, production-ready features and communicates
+                blockers early. Sprint delivery stayed predictable.”
+              </blockquote>
+              <footer>
+                <strong>Engineering collaborator</strong>
+                TECFOLK · Full-stack delivery
+              </footer>
+            </article>
+            <article class="quote-item reveal" data-delay="2">
+              <blockquote>
+                “He rebuilt client sites with better structure and SEO focus —
+                pages loaded faster and were easier for the team to maintain.”
+              </blockquote>
+              <footer>
+                <strong>Project stakeholder</strong>
+                Friend's Vision · Web projects
+              </footer>
+            </article>
+            <article class="quote-item reveal" data-delay="3">
+              <blockquote>
+                “The VR training concept was ambitious, but Ahmad kept the
+                interaction design practical and measurable.”
+              </blockquote>
+              <footer>
+                <strong>Project peer</strong>
+                LAPSSIM · Immersive simulation
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing" class="py-24 lg:py-32 border-t border-line">
+        <div class="site-wrap">
+          <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 mb-8 lg:mb-10">
+            <div class="lg:col-span-6 reveal">
+              <p class="section-kicker mb-4">Freelance pricing</p>
+              <h2
+                class="font-display text-4xl md:text-5xl font-semibold tracking-tight text-ink leading-tight"
+              >
+                Clear packages for Pakistan clients
+              </h2>
+            </div>
+            <div class="lg:col-span-6 reveal" data-delay="1">
+              <p class="text-lg text-muted leading-relaxed max-w-xl mt-1 lg:mt-10">
+                Rates are set for the local market — fair, transparent starting
+                points. Switch currency anytime; values convert from a PKR base.
+              </p>
+            </div>
+          </div>
+
+          <div class="currency-bar reveal" data-delay="1">
+            <p>
+              Base market: <strong class="text-ink">Pakistan (PKR)</strong>.
+              Select a currency to preview converted estimates.
+            </p>
+            <div
+              class="currency-switch"
+              id="currency-switch"
+              role="group"
+              aria-label="Select pricing currency"
+            >
+              <button type="button" class="currency-btn is-active" data-currency="PKR">
+                PKR
+              </button>
+              <button type="button" class="currency-btn" data-currency="USD">
+                USD
+              </button>
+              <button type="button" class="currency-btn" data-currency="EUR">
+                EUR
+              </button>
+              <button type="button" class="currency-btn" data-currency="GBP">
+                GBP
+              </button>
+              <button type="button" class="currency-btn" data-currency="AED">
+                AED
+              </button>
+              <button type="button" class="currency-btn" data-currency="SAR">
+                SAR
+              </button>
+            </div>
+          </div>
+
+          <div class="price-grid">
+            <article class="price-plan reveal" data-delay="1">
+              <h3>Starter Presence</h3>
+              <p class="price-tagline">
+                Landing page or compact business site for a sharp first impression.
+              </p>
+              <div class="price-amount">
+                <span class="from-label">Starting from</span>
+                <span class="value" data-price-pkr="35000">Rs 35,000</span>
+                <span class="period">/ project</span>
+              </div>
+              <ul>
+                <li>1–5 responsive pages</li>
+                <li>Mobile-first UI + basic SEO</li>
+                <li>Contact / WhatsApp CTA</li>
+                <li>1 revision round · 5–10 days</li>
+              </ul>
+              <a href="#contact" class="btn-ghost w-full">Request this package</a>
+            </article>
+
+            <article class="price-plan is-featured reveal" data-delay="2">
+              <span class="price-badge">Most booked</span>
+              <h3>Business Web</h3>
+              <p class="price-tagline">
+                Multi-page site or WordPress build with content structure that converts.
+              </p>
+              <div class="price-amount">
+                <span class="from-label">Starting from</span>
+                <span class="value" data-price-pkr="75000">Rs 75,000</span>
+                <span class="period">/ project</span>
+              </div>
+              <ul>
+                <li>Up to 10 pages · CMS ready</li>
+                <li>WordPress / React options</li>
+                <li>Performance + on-page SEO</li>
+                <li>2 revision rounds · 2–3 weeks</li>
+              </ul>
+              <a href="#contact" class="btn-primary w-full">Request this package</a>
+            </article>
+
+            <article class="price-plan reveal" data-delay="1">
+              <h3>Full Stack Product</h3>
+              <p class="price-tagline">
+                Custom web apps, dashboards, and e-commerce with auth and APIs.
+              </p>
+              <div class="price-amount">
+                <span class="from-label">Starting from</span>
+                <span class="value" data-price-pkr="180000">Rs 180,000</span>
+                <span class="period">/ project</span>
+              </div>
+              <ul>
+                <li>MERN / Next.js architecture</li>
+                <li>Auth, admin, REST APIs</li>
+                <li>Deploy + basic CI/CD</li>
+                <li>Scoped milestones · 4–8 weeks</li>
+              </ul>
+              <a href="#contact" class="btn-ghost w-full">Request this package</a>
+            </article>
+
+            <article class="price-plan reveal" data-delay="2">
+              <h3>VR &amp; AI Specialty</h3>
+              <p class="price-tagline">
+                Immersive Unity experiences or practical AI feature integration.
+              </p>
+              <div class="price-amount">
+                <span class="from-label">Starting from</span>
+                <span class="value" data-price-pkr="250000">Rs 250,000</span>
+                <span class="period">/ project</span>
+              </div>
+              <ul>
+                <li>Unity / Meta Quest prototypes</li>
+                <li>LLM workflows &amp; automation</li>
+                <li>Skill metrics / product hooks</li>
+                <li>Discovery call required</li>
+              </ul>
+              <a href="#contact" class="btn-ghost w-full">Request this package</a>
+            </article>
+          </div>
+
+          <p class="price-note reveal">
+            Hourly support also available from
+            <strong data-price-pkr="1000" data-price-mode="hourly">Rs 1,000</strong>
+            / hour (Pakistan market). Final quotes depend on scope, timeline, and
+            revisions —
+            <a href="#contact" class="text-accent font-semibold">talk through your brief</a>.
+          </p>
+        </div>
+      </section>
 
       <!-- CONTACT -->
       <section id="contact" class="py-24 lg:py-32 border-t border-line">
@@ -2090,11 +3782,11 @@
               <h2
                 class="font-display text-4xl md:text-5xl font-semibold tracking-tight text-ink leading-tight"
               >
-                Let's work together
+                Let's build what's next
               </h2>
               <p class="mt-5 text-muted text-lg leading-relaxed">
-                Have a project in mind? Send a message and I'll get back within
-                24 hours.
+                Web product, VR experience, or AI-powered feature — tell me what
+                you're shipping and I'll reply within 24 hours.
               </p>
 
               <div class="mt-10 space-y-5">
@@ -2206,13 +3898,13 @@
                     <option value="" disabled selected>
                       Choose a project type…
                     </option>
-                    <option>Web Application</option>
-                    <option>E-commerce Platform</option>
-                    <option>Landing Page</option>
-                    <option>Website Redesign</option>
-                    <option>SaaS Product</option>
-                    <option>WordPress Site</option>
-                    <option>API Development</option>
+                    <option>Starter Presence (Landing / small site)</option>
+                    <option>Business Web (Multi-page / WordPress)</option>
+                    <option>Full Stack Product / E-commerce</option>
+                    <option>VR / Immersive Experience</option>
+                    <option>AI Feature Integration</option>
+                    <option>Hourly Support / Retainer</option>
+                    <option>Custom / Not sure yet</option>
                   </select>
                 </div>
 
@@ -2224,10 +3916,11 @@
                     <option value="" disabled selected>
                       Select budget range…
                     </option>
-                    <option>Under $1,000</option>
-                    <option>$1,000 – $5,000</option>
-                    <option>$5,000 – $15,000</option>
-                    <option>$15,000+</option>
+                    <option>Under PKR 50,000</option>
+                    <option>PKR 50,000 – 150,000</option>
+                    <option>PKR 150,000 – 400,000</option>
+                    <option>PKR 400,000+</option>
+                    <option>Open / discuss in USD / EUR / GBP</option>
                   </select>
                 </div>
 
@@ -2274,15 +3967,38 @@
         <div
           class="site-wrap flex flex-col sm:flex-row items-center justify-between gap-6"
         >
-          <p class="font-display text-lg font-semibold text-ink">
-            Ahmad <span class="text-accent">Mobeen</span>
+          <p class="font-display text-base sm:text-lg font-semibold text-ink uppercase tracking-wide">
+            Muhammad Ahmad
+            <span class="text-accent">Mobeen</span>
           </p>
           <p class="text-sm text-muted text-center sm:text-right">
-            &copy; 2026 Muhammad Ahmad Mobeen — Built with precision, shipped
-            with care.
+            &copy; 2026 Muhammad Ahmad Mobeen — Software · VR · AI. Built with
+            precision, shipped with care.
           </p>
         </div>
       </footer>
+    </div>
+
+    <!-- Case study modal -->
+    <div
+      class="case-modal"
+      id="case-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="case-title"
+      hidden
+    >
+      <div class="case-dialog">
+        <div class="case-dialog-top">
+          <h3 id="case-title">Project</h3>
+          <button type="button" class="case-close" id="case-close" aria-label="Close case study">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <p class="case-meta" id="case-meta"></p>
+        <div class="case-grid" id="case-body"></div>
+        <div class="case-actions" id="case-actions"></div>
+      </div>
     </div>
 
     <!-- Floating WhatsApp -->
@@ -2307,6 +4023,56 @@
           localStorage.setItem("theme", next);
         });
       });
+
+      // Freelance pricing — PKR base (Pakistan market), convert for display
+      (() => {
+        const rates = {
+          PKR: { perPkr: 1, code: "PKR", locale: "en-PK" },
+          USD: { perPkr: 1 / 278, code: "USD", locale: "en-US" },
+          EUR: { perPkr: 1 / 300, code: "EUR", locale: "en-EU" },
+          GBP: { perPkr: 1 / 350, code: "GBP", locale: "en-GB" },
+          AED: { perPkr: 1 / 76, code: "AED", locale: "en-AE" },
+          SAR: { perPkr: 1 / 74, code: "SAR", locale: "en-SA" },
+        };
+        const switcher = document.getElementById("currency-switch");
+        if (!switcher) return;
+        const nodes = document.querySelectorAll("[data-price-pkr]");
+        const buttons = [...switcher.querySelectorAll(".currency-btn")];
+
+        function formatAmount(pkr, currency) {
+          const cfg = rates[currency] || rates.PKR;
+          const value = Math.round(Number(pkr) * cfg.perPkr);
+          try {
+            return new Intl.NumberFormat(cfg.locale, {
+              style: "currency",
+              currency: cfg.code,
+              maximumFractionDigits: 0,
+            }).format(value);
+          } catch {
+            return cfg.code + " " + value.toLocaleString("en-US");
+          }
+        }
+
+        function applyCurrency(currency) {
+          const cfg = rates[currency] || rates.PKR;
+          buttons.forEach((btn) =>
+            btn.classList.toggle("is-active", btn.dataset.currency === currency),
+          );
+          nodes.forEach((el) => {
+            const pkr = el.getAttribute("data-price-pkr");
+            el.textContent = formatAmount(pkr, currency);
+          });
+          localStorage.setItem("pricing-currency", currency);
+          switcher.setAttribute("data-active", cfg.code);
+        }
+
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", () => applyCurrency(btn.dataset.currency));
+        });
+
+        const saved = localStorage.getItem("pricing-currency");
+        applyCurrency(rates[saved] ? saved : "PKR");
+      })();
 
       // Mobile nav
       document.getElementById("burger").addEventListener("click", () => {
@@ -2357,149 +4123,37 @@
       document.querySelectorAll(".reveal").forEach((el) => ro.observe(el));
 
 
-      // Skills radial fan tree
+      // Skills stack matrix tabs
       (() => {
-        const fan = document.getElementById("skill-fan");
-        const svg = document.getElementById("skill-fan-svg");
-        const label = document.getElementById("skill-fan-label");
-        if (!fan || !svg) return;
-        const domains = [...fan.querySelectorAll(".skill-fan-domain")];
-        const leafGroups = [...fan.querySelectorAll(".skill-fan-leaves")];
-        const mobileMQ = window.matchMedia("(max-width: 720px)");
-        const reduce = window.matchMedia(
-          "(prefers-reduced-motion: reduce)",
-        ).matches;
+        const root = document.getElementById("skill-matrix");
+        if (!root) return;
+        const tabs = [...root.querySelectorAll(".skill-tab")];
+        const panels = [...root.querySelectorAll(".skill-panel")];
 
-        function pct(el, rect) {
-          const r = el.getBoundingClientRect();
-          return {
-            x: ((r.left + r.width / 2 - rect.left) / rect.width) * 100,
-            y: ((r.top + r.height / 2 - rect.top) / rect.height) * 100,
-          };
-        }
-
-        function draw(active) {
-          if (mobileMQ.matches) {
-            svg.innerHTML = "";
-            return;
-          }
-          const rect = fan.getBoundingClientRect();
-          const root = fan.querySelector(".skill-fan-root");
-          const from = pct(root, rect);
-          const paths = domains
-            .map((d) => {
-              const to = pct(d, rect);
-              const c =
-                getComputedStyle(d).getPropertyValue("--c").trim() || "#0369a1";
-              const mx = (from.x + to.x) / 2;
-              const my = (from.y + to.y) / 2;
-              const on = d.dataset.domain === active;
-              return (
-                '<path class="' +
-                (on ? "is-active" : "") +
-                '" stroke="' +
-                c +
-                '" d="M ' +
-                from.x +
-                " " +
-                from.y +
-                " Q " +
-                mx +
-                " " +
-                my +
-                " " +
-                to.x +
-                " " +
-                to.y +
-                '" />'
-              );
-            })
-            .join("");
-
-          const activeDomain = domains.find((d) => d.dataset.domain === active);
-          const leaves = [
-            ...fan.querySelectorAll(".skill-fan-leaves.is-open .skill-fan-leaf"),
-          ];
-          let leafPaths = "";
-          if (activeDomain && leaves.length) {
-            const a = pct(activeDomain, rect);
-            const c =
-              getComputedStyle(activeDomain).getPropertyValue("--c").trim() ||
-              "#0369a1";
-            leafPaths = leaves
-              .map((leaf, i) => {
-                const to = pct(leaf, rect);
-                const mx = (a.x + to.x) / 2;
-                const my = (a.y + to.y) / 2;
-                return (
-                  '<path class="skill-leaf-link" style="--d:' +
-                  (0.08 + i * 0.04) +
-                  's" stroke="' +
-                  c +
-                  '" d="M ' +
-                  a.x +
-                  " " +
-                  a.y +
-                  " Q " +
-                  mx +
-                  " " +
-                  my +
-                  " " +
-                  to.x +
-                  " " +
-                  to.y +
-                  '" />'
-                );
-              })
-              .join("");
-          }
-          svg.innerHTML = paths + leafPaths;
-          requestAnimationFrame(() => {
-            svg
-              .querySelectorAll(".skill-leaf-link")
-              .forEach((p) => p.classList.add("is-drawn"));
+        function activate(id) {
+          tabs.forEach((tab) => {
+            const on = tab.dataset.panel === id;
+            tab.classList.toggle("is-active", on);
+            tab.setAttribute("aria-selected", on ? "true" : "false");
           });
-        }
-
-        function activate(domain, title) {
-          domains.forEach((d) =>
-            d.classList.toggle("is-active", d.dataset.domain === domain),
-          );
-          leafGroups.forEach((g) => g.classList.remove("is-open"));
-          const next = leafGroups.find((g) => g.dataset.domain === domain);
-          if (next) requestAnimationFrame(() => next.classList.add("is-open"));
-          if (label) label.textContent = title;
-          draw(domain);
-          if (!reduce && !mobileMQ.matches) {
-            setTimeout(() => draw(domain), 480);
-          }
-        }
-
-        domains.forEach((d) => {
-          d.addEventListener("click", () =>
-            activate(d.dataset.domain, d.textContent.trim()),
-          );
-          d.addEventListener("mouseenter", () => {
-            if (
-              window.matchMedia("(pointer: fine)").matches &&
-              !mobileMQ.matches
-            ) {
-              activate(d.dataset.domain, d.textContent.trim());
+          panels.forEach((panel) => {
+            const on = panel.id === "skill-panel-" + id;
+            panel.classList.toggle("is-active", on);
+            panel.hidden = !on;
+            if (on) {
+              panel.querySelectorAll(".skill-fill").forEach((fill) => {
+                fill.style.width = "0";
+                requestAnimationFrame(() => {
+                  fill.style.width = fill.style.getPropertyValue("--lvl");
+                });
+              });
             }
           });
-        });
+        }
 
-        const first =
-          domains.find((d) => d.classList.contains("is-active")) || domains[0];
-        activate(first.dataset.domain, first.textContent.trim());
-        window.addEventListener(
-          "resize",
-          () => {
-            const active = fan.querySelector(".skill-fan-domain.is-active");
-            draw(active ? active.dataset.domain : first.dataset.domain);
-          },
-          { passive: true },
-        );
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => activate(tab.dataset.panel));
+        });
       })();
 
 
@@ -2513,7 +4167,133 @@
         });
       });
 
-      // Contact form
+      // Case studies
+      (() => {
+        const cases = {
+          freshbite: {
+            title: "FreshBite",
+            meta: "React · Firebase · Tailwind · Live product",
+            problem:
+              "Users needed a simple grocery ordering experience with reliable auth and up-to-date catalogue data — without a heavy backend ops burden.",
+            solution:
+              "Built a responsive React app on Firebase for authentication and real-time data, with Tailwind UI patterns optimized for mobile shopping flows.",
+            results: [
+              "Real-time product/catalogue sync via Firebase",
+              "Auth-ready customer flow on mobile and desktop",
+              "Deployed as a shareable live demo for stakeholder review",
+            ],
+            role: "Solo full-stack / frontend engineer — UI, auth wiring, data flow, and deployment.",
+            live: "https://ahmadcr17dev.github.io/freshbiteapp_Reactjs/",
+          },
+          urbanstich: {
+            title: "UrbanStich",
+            meta: "MERN · Charts · Admin · Vercel",
+            problem:
+              "A fashion storefront needed cart, product management, and analytics in one stack that could grow beyond a static catalogue.",
+            solution:
+              "Delivered a MERN e-commerce system with product admin, cart flows, and chart-based insights — mobile-first UI on the storefront.",
+            results: [
+              "End-to-end cart + product management path",
+              "Admin-friendly charts for catalogue visibility",
+              "Production deploy on Vercel for fast iteration",
+            ],
+            role: "Full-stack engineer — API, data models, admin UX, and frontend commerce UI.",
+            live: "https://urban-stich-mern.vercel.app/",
+          },
+          kfc: {
+            title: "KFC Clone",
+            meta: "MERN · Tailwind · REST APIs",
+            problem:
+              "Demonstrate a complete food-ordering journey — browse, cart, checkout — with a maintainable API-backed architecture.",
+            solution:
+              "Implemented catalogue, cart, and checkout against REST APIs, with Tailwind styling for a familiar QSR ordering experience.",
+            results: [
+              "Full browse → cart → checkout loop",
+              "REST API separation for catalogue and order actions",
+              "Reusable patterns for future commerce clones",
+            ],
+            role: "Full-stack engineer — API design, UI states, and order flow.",
+            live: "https://kicksandfits.lovestoblog.com/",
+          },
+          lapsim: {
+            title: "LAPSSIM",
+            meta: "Unity · C# · Blender · Meta Quest · VR",
+            problem:
+              "Surgical trainees need risk-free SILS appendectomy practice with feedback that goes beyond ‘completed / not completed’.",
+            solution:
+              "Designed an immersive VR simulator in Unity with Blender assets and Meta Quest interaction, including skill-tracking metrics for practice quality.",
+            results: [
+              "Hands-on VR training loop without clinical risk",
+              "Skill metrics for measurable practice outcomes",
+              "Differentiating XR portfolio piece beyond standard web apps",
+            ],
+            role: "VR engineer — interaction design, simulation flow, and metric framing.",
+            live: "",
+          },
+        };
+
+        const modal = document.getElementById("case-modal");
+        const title = document.getElementById("case-title");
+        const meta = document.getElementById("case-meta");
+        const body = document.getElementById("case-body");
+        const actions = document.getElementById("case-actions");
+        const closeBtn = document.getElementById("case-close");
+        if (!modal) return;
+
+        function openCase(id) {
+          const data = cases[id];
+          if (!data) return;
+          title.textContent = data.title;
+          meta.textContent = data.meta;
+          body.innerHTML =
+            '<div class="case-block"><h4>Problem</h4><p>' +
+            data.problem +
+            "</p></div>" +
+            '<div class="case-block"><h4>Solution</h4><p>' +
+            data.solution +
+            "</p></div>" +
+            '<div class="case-block"><h4>Results</h4><ul>' +
+            data.results.map((r) => "<li>" + r + "</li>").join("") +
+            "</ul></div>" +
+            '<div class="case-block"><h4>Role</h4><p>' +
+            data.role +
+            "</p></div>";
+          actions.innerHTML = data.live
+            ? '<a class="btn-primary" href="' +
+              data.live +
+              '" target="_blank" rel="noopener">Open live demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>' +
+              '<button type="button" class="btn-ghost" data-case-dismiss>Close</button>'
+            : '<a class="btn-primary" href="#contact">Discuss similar VR work</a>' +
+              '<button type="button" class="btn-ghost" data-case-dismiss>Close</button>';
+          modal.hidden = false;
+          modal.classList.add("is-open");
+          document.body.style.overflow = "hidden";
+          closeBtn.focus();
+        }
+
+        function closeCase() {
+          modal.classList.remove("is-open");
+          modal.hidden = true;
+          document.body.style.overflow = "";
+        }
+
+        document.querySelectorAll(".case-trigger").forEach((btn) => {
+          btn.addEventListener("click", () => openCase(btn.dataset.case));
+        });
+        closeBtn.addEventListener("click", closeCase);
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal || e.target.closest("[data-case-dismiss]")) {
+            closeCase();
+          }
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && modal.classList.contains("is-open")) {
+            closeCase();
+          }
+        });
+      })();
+
+      // Contact form — delivers via WhatsApp + mailto (no fake success)
       document
         .getElementById("contact-form")
         .addEventListener("submit", function (e) {
@@ -2522,10 +4302,42 @@
           const btnLoad = document.getElementById("btn-loading");
           const status = document.getElementById("form-status");
           const btn = document.getElementById("submit-btn");
+          const data = new FormData(this);
+          const name = String(data.get("name") || "").trim();
+          const email = String(data.get("email") || "").trim();
+          const project = String(data.get("project") || "").trim();
+          const budget = String(data.get("budget") || "Not specified").trim();
+          const message = String(data.get("message") || "").trim();
+
+          const plain =
+            "New freelance inquiry from portfolio\n\n" +
+            "Name: " +
+            name +
+            "\nEmail: " +
+            email +
+            "\nProject: " +
+            project +
+            "\nBudget: " +
+            budget +
+            "\n\nMessage:\n" +
+            message;
 
           btn.disabled = true;
           btnText.classList.add("hidden");
           btnLoad.classList.remove("hidden");
+
+          const wa =
+            "https://wa.me/923195436507?text=" + encodeURIComponent(plain);
+          const mail =
+            "mailto:chaudaryahmad1041@gmail.com?subject=" +
+            encodeURIComponent("Portfolio inquiry — " + project) +
+            "&body=" +
+            encodeURIComponent(plain);
+
+          window.open(wa, "_blank", "noopener");
+          setTimeout(() => {
+            window.location.href = mail;
+          }, 250);
 
           setTimeout(() => {
             btn.disabled = false;
@@ -2536,10 +4348,10 @@
               "text-sm font-medium rounded-md px-4 py-3 text-accent border border-line";
             status.style.background = "var(--accent-soft)";
             status.textContent =
-              "Message sent! I'll get back to you within 24 hours.";
+              "Opening WhatsApp and your email app with the message. If a popup was blocked, use the WhatsApp button or email link.";
             this.reset();
-            setTimeout(() => status.classList.add("hidden"), 5000);
-          }, 1400);
+            setTimeout(() => status.classList.add("hidden"), 7000);
+          }, 600);
         });
     </script>
   </body>
