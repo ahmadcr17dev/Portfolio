@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,14 +19,21 @@
       content="Production web systems, immersive VR, and intelligent AI products — engineered end to end. Freelance pricing for the Pakistan market."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="./images/main%20image%201.jpeg" />
+    <meta
+      property="og:image"
+      content="https://ahmadcr17dev.github.io/Portfolio/images/main%20image%201.jpeg"
+    />
+    <meta property="og:url" content="https://ahmadcr17dev.github.io/Portfolio/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Muhammad Ahmad Mobeen — Software Engineer · VR · AI" />
     <meta
       name="twitter:description"
       content="Full-stack, VR, and AI engineering — production systems with clear outcomes."
     />
-    <meta name="twitter:image" content="./images/main%20image%201.jpeg" />
+    <meta
+      name="twitter:image"
+      content="https://ahmadcr17dev.github.io/Portfolio/images/main%20image%201.jpeg"
+    />
     <meta name="theme-color" content="#0F172A" />
     <link rel="canonical" href="https://ahmadcr17dev.github.io/Portfolio/" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
@@ -148,7 +155,8 @@
       }
 
       html {
-        scroll-behavior: smooth;
+        scroll-behavior: auto;
+        scroll-padding-top: 5.5rem;
       }
 
       body {
@@ -159,6 +167,31 @@
         transition:
           background 0.35s ease,
           color 0.35s ease;
+      }
+
+      p,
+      blockquote {
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+      }
+
+      .section-kicker,
+      .hex-meta,
+      .hex-card p,
+      .hex-card .project-outcome,
+      .exp-company,
+      .exp-date,
+      .edu-year,
+      .edu-school,
+      .skill-chip-label,
+      .price-note,
+      .metric-strip p,
+      .lapsim-visual p,
+      .process-num,
+      footer p {
+        text-align: inherit;
+        hyphens: manual;
       }
 
       ::selection {
@@ -2061,6 +2094,122 @@
         margin-bottom: 0.15rem;
       }
 
+      /* Process */
+      .process-grid {
+        display: grid;
+        gap: 1.25rem;
+      }
+      @media (min-width: 768px) {
+        .process-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 1.5rem;
+        }
+      }
+      .process-step {
+        position: relative;
+        padding-top: 0.25rem;
+      }
+      .process-num {
+        display: block;
+        font-family: Fraunces, Georgia, serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.03em;
+        line-height: 1;
+        margin-bottom: 0.85rem;
+      }
+      .process-step h3 {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin-bottom: 0.45rem;
+        letter-spacing: -0.01em;
+      }
+      .process-step p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* FAQ */
+      .faq-list {
+        display: grid;
+        gap: 0.65rem;
+        max-width: 48rem;
+      }
+      .faq-item {
+        border: 1.5px solid var(--line);
+        border-radius: 0.55rem;
+        background: var(--surface);
+        overflow: hidden;
+      }
+      .faq-item summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 1rem 1.15rem;
+        font-weight: 650;
+        color: var(--ink);
+        font-size: 0.98rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq-item summary::after {
+        content: "+";
+        font-family: Fraunces, Georgia, serif;
+        font-size: 1.35rem;
+        font-weight: 500;
+        color: var(--accent);
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      .faq-item[open] summary::after {
+        content: "–";
+      }
+      .faq-item .faq-body {
+        padding: 0 1.15rem 1.1rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.65;
+      }
+
+      .hero-social {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.65rem 1rem;
+        margin-top: 1.35rem;
+      }
+      .hero-social a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--muted);
+        transition: color 0.2s;
+      }
+      .hero-social a:hover {
+        color: var(--accent);
+      }
+
+      .project-outcome {
+        display: block;
+        margin: -0.15rem 0 0.85rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--accent);
+        text-align: inherit;
+      }
+
       /* Outcome chips under about */
       .outcome-row {
         display: grid;
@@ -2336,18 +2485,14 @@
             <span class="text-accent">Mobeen</span>
           </a>
 
-          <div class="hidden xl:flex items-center gap-6">
-            <a href="#home" class="nav-link">Home</a>
+          <div class="hidden lg:flex items-center gap-5 xl:gap-7">
             <a href="#about" class="nav-link">About</a>
-            <a href="#expertise" class="nav-link">Expertise</a>
-            <a href="#research" class="nav-link">Research</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Work</a>
             <a href="#pricing" class="nav-link">Pricing</a>
             <a href="#contact" class="nav-link">Contact</a>
           </div>
 
-          <div class="hidden xl:flex items-center gap-2">
+          <div class="hidden lg:flex items-center gap-2">
             <button
               type="button"
               class="icon-btn theme-toggle"
@@ -2357,19 +2502,10 @@
               <i class="fa-solid fa-moon icon-moon"></i>
               <i class="fa-solid fa-sun icon-sun"></i>
             </button>
-            <a
-              href="https://github.com/ahmadcr17dev"
-              target="_blank"
-              rel="noopener"
-              class="icon-btn"
-              aria-label="GitHub"
-            >
-              <i class="fab fa-github text-lg"></i>
-            </a>
-            <a href="#pricing" class="btn-primary text-sm py-2.5 px-5 ml-1">Hire Me</a>
+            <a href="#contact" class="btn-primary text-sm py-2.5 px-5 ml-1">Hire Me</a>
           </div>
 
-          <div class="flex xl:hidden items-center gap-1 shrink-0">
+          <div class="flex lg:hidden items-center gap-1 shrink-0">
             <button
               type="button"
               class="icon-btn theme-toggle"
@@ -2391,17 +2527,34 @@
 
         <div
           id="mobile-nav"
-          class="xl:hidden hidden px-5 pb-6 pt-2 flex flex-col gap-1 border-t border-line bg-paper/95 backdrop-blur-md"
+          class="lg:hidden hidden px-5 pb-6 pt-2 flex flex-col gap-1 border-t border-line bg-paper/95 backdrop-blur-md"
         >
-          <a href="#home" class="py-3.5 text-sm font-medium text-ink">Home</a>
           <a href="#about" class="py-3.5 text-sm font-medium text-ink">About</a>
-          <a href="#expertise" class="py-3.5 text-sm font-medium text-ink">Expertise</a>
-          <a href="#research" class="py-3.5 text-sm font-medium text-ink">Research</a>
-          <a href="#projects" class="py-3.5 text-sm font-medium text-ink">Projects</a>
-          <a href="#skills" class="py-3.5 text-sm font-medium text-ink">Skills</a>
+          <a href="#projects" class="py-3.5 text-sm font-medium text-ink">Work</a>
           <a href="#pricing" class="py-3.5 text-sm font-medium text-ink">Pricing</a>
+          <a href="#faq" class="py-3.5 text-sm font-medium text-ink">FAQ</a>
           <a href="#contact" class="py-3.5 text-sm font-medium text-ink">Contact</a>
-          <a href="#pricing" class="btn-primary mt-3 w-full justify-center">Hire Me</a>
+          <div class="flex items-center gap-3 pt-3 mt-1 border-t border-line">
+            <a
+              href="https://linkedin.com/in/chaudaryahmad"
+              target="_blank"
+              rel="noopener"
+              class="icon-btn"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin-in text-lg"></i>
+            </a>
+            <a
+              href="https://github.com/ahmadcr17dev"
+              target="_blank"
+              rel="noopener"
+              class="icon-btn"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github text-lg"></i>
+            </a>
+          </div>
+          <a href="#contact" class="btn-primary mt-3 w-full justify-center">Hire Me</a>
         </div>
       </nav>
 
@@ -2449,13 +2602,41 @@
               </a>
               <a href="#expertise" class="btn-ghost">Explore expertise</a>
               <a
-                href="./assets/Muhammad_Ahmad_Mobeen_CV.html"
+                href="./assets/Muhammad_Ahmad_Mobeen_CV.pdf"
+                download="Muhammad_Ahmad_Mobeen_CV.pdf"
                 target="_blank"
                 rel="noopener"
                 class="btn-ghost"
               >
                 <i class="fa-solid fa-file-arrow-down text-xs"></i>
                 Download CV
+              </a>
+            </div>
+
+            <div class="hero-social hero-rise hero-rise-d3">
+              <a
+                href="https://linkedin.com/in/chaudaryahmad"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fab fa-linkedin-in"></i>
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/ahmadcr17dev"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+              <a
+                href="https://wa.me/923195436507"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
               </a>
             </div>
 
@@ -3062,6 +3243,7 @@
                 Grocery ordering with real-time Firebase data, auth, and a
                 mobile-first shopping flow.
               </p>
+              <span class="project-outcome">Live demo · Real-time catalogue · Auth-ready</span>
               <div class="project-actions">
                 <button type="button" class="project-link case-trigger" data-case="freshbite">
                   Case study
@@ -3097,6 +3279,7 @@
                 Fashion e-commerce with cart, product admin, charts, and
                 end-to-end MERN architecture.
               </p>
+              <span class="project-outcome">Cart + admin · Charts · Live on Vercel</span>
               <div class="project-actions">
                 <button type="button" class="project-link case-trigger" data-case="urbanstich">
                   Case study
@@ -3132,6 +3315,7 @@
                 Food ordering platform with catalogue, cart, checkout flow, and
                 REST APIs.
               </p>
+              <span class="project-outcome">Browse → cart → checkout · REST APIs</span>
               <div class="project-actions">
                 <button type="button" class="project-link case-trigger" data-case="kfc">
                   Case study
@@ -3168,6 +3352,7 @@
                 Immersive SILS appendectomy simulator with skill-tracking metrics
                 for risk-free practice.
               </p>
+              <span class="project-outcome">Meta Quest · Skill metrics · Award-backed</span>
               <div class="project-actions">
                 <button type="button" class="project-link case-trigger" data-case="lapsim">
                   Case study
@@ -3591,8 +3776,8 @@
             </div>
             <div class="lg:col-span-7 reveal" data-delay="1">
               <p class="text-lg text-muted leading-relaxed max-w-xl mt-1 lg:mt-10">
-                Feedback from product and delivery contexts — clear communication,
-                reliable shipping, and polish that holds up in production.
+                Straight feedback from people who worked with me — on delivery,
+                communication, and whether the final product actually helped.
               </p>
             </div>
           </div>
@@ -3600,33 +3785,95 @@
           <div class="quote-grid">
             <article class="quote-item reveal" data-delay="1">
               <blockquote>
-                “Ahmad ships clean, production-ready features and communicates
-                blockers early. Sprint delivery stayed predictable.”
+                “I hired Ahmad for our company website and it was a smooth
+                experience. He asked the right questions, kept me updated on
+                WhatsApp, and delivered on the date we agreed. The site looks
+                clean and our customers notice it.”
               </blockquote>
               <footer>
-                <strong>Engineering collaborator</strong>
-                TECFOLK · Full-stack delivery
+                <strong>Sulman Ahmad</strong>
+                Business owner · Website project
               </footer>
             </article>
             <article class="quote-item reveal" data-delay="2">
               <blockquote>
-                “He rebuilt client sites with better structure and SEO focus —
-                pages loaded faster and were easier for the team to maintain.”
+                “Worked with Ahmad on a full-stack build. He doesn’t overcomplicate
+                things — writes clean code, fixes issues the same day, and
+                explains everything in simple words. Easy person to collaborate
+                with.”
               </blockquote>
               <footer>
-                <strong>Project stakeholder</strong>
-                Friend's Vision · Web projects
+                <strong>Zeeshan Rasool</strong>
+                Software engineer · MERN collaboration
               </footer>
             </article>
             <article class="quote-item reveal" data-delay="3">
               <blockquote>
-                “The VR training concept was ambitious, but Ahmad kept the
-                interaction design practical and measurable.”
+                “We had a VR training idea that could have gone nowhere. Ahmad
+                kept the scope realistic, focused on what trainees actually need,
+                and the demo felt usable — not just flashy. Would hire him again.”
               </blockquote>
               <footer>
-                <strong>Project peer</strong>
-                LAPSSIM · Immersive simulation
+                <strong>Javed Ahmad</strong>
+                Project lead · Immersive prototype
               </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section id="process" class="py-24 lg:py-32 border-t border-line">
+        <div class="site-wrap">
+          <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 mb-12 lg:mb-14">
+            <div class="lg:col-span-5 reveal">
+              <p class="section-kicker mb-4">How we work</p>
+              <h2
+                class="font-display text-4xl md:text-5xl font-semibold tracking-tight text-ink leading-tight"
+              >
+                A clear path from brief to launch
+              </h2>
+            </div>
+            <div class="lg:col-span-7 reveal" data-delay="1">
+              <p class="text-lg text-muted leading-relaxed max-w-xl mt-1 lg:mt-10">
+                No guessing games. You always know the next step, the timeline,
+                and what you’re paying for.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-grid">
+            <article class="process-step reveal" data-delay="1">
+              <span class="process-num">01</span>
+              <h3>Discovery</h3>
+              <p>
+                Short call or WhatsApp chat about goals, users, budget, and
+                deadline. I tell you honestly if I’m the right fit.
+              </p>
+            </article>
+            <article class="process-step reveal" data-delay="2">
+              <span class="process-num">02</span>
+              <h3>Proposal</h3>
+              <p>
+                Written scope, milestones, and a fixed or phased quote — so
+                there are no surprise invoices mid-project.
+              </p>
+            </article>
+            <article class="process-step reveal" data-delay="3">
+              <span class="process-num">03</span>
+              <h3>Build &amp; review</h3>
+              <p>
+                I ship in checkpoints you can click and test. Feedback rounds are
+                planned into the schedule, not rushed at the end.
+              </p>
+            </article>
+            <article class="process-step reveal" data-delay="1">
+              <span class="process-num">04</span>
+              <h3>Launch &amp; support</h3>
+              <p>
+                Go-live help, handoff notes, and a short support window so you’re
+                not stuck after delivery.
+              </p>
             </article>
           </div>
         </div>
@@ -3773,6 +4020,72 @@
         </div>
       </section>
 
+      <!-- FAQ -->
+      <section id="faq" class="py-24 lg:py-32 border-t border-line bg-surface/60">
+        <div class="site-wrap">
+          <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 mb-10 lg:mb-12">
+            <div class="lg:col-span-5 reveal">
+              <p class="section-kicker mb-4">FAQ</p>
+              <h2
+                class="font-display text-4xl md:text-5xl font-semibold tracking-tight text-ink leading-tight"
+              >
+                Questions clients ask first
+              </h2>
+            </div>
+            <div class="lg:col-span-7 reveal" data-delay="1">
+              <p class="text-lg text-muted leading-relaxed max-w-xl mt-1 lg:mt-10">
+                Straight answers on timelines, payment, revisions, and what I
+                don’t take on.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-list reveal" data-delay="1">
+            <details class="faq-item" open>
+              <summary>How long does a typical project take?</summary>
+              <p class="faq-body">
+                Landing pages and small business sites usually take 1–3 weeks.
+                Full-stack products and e-commerce are more like 4–10 weeks,
+                depending on features. VR / AI work is scoped after a discovery
+                call.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>How do payments work?</summary>
+              <p class="faq-body">
+                For most packages: 40% to start, 40% at the main review milestone,
+                20% on launch. Hourly work can be weekly or milestone-based.
+                Bank transfer and common local methods are fine.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>How many revision rounds are included?</summary>
+              <p class="faq-body">
+                Packages include planned review rounds (usually 2). Extra
+                redesigns or scope changes are quoted separately so the schedule
+                stays honest.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Do you work with clients outside Pakistan?</summary>
+              <p class="faq-body">
+                Yes. Pricing is shown in PKR with USD / EUR / GBP / AED / SAR
+                previews. Communication stays on WhatsApp, email, or video call —
+                whichever you prefer.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>What do you not take on?</summary>
+              <p class="faq-body">
+                I skip vague “make me an app like X” briefs with no budget or
+                timeline, and I don’t copy competitors’ brands or content.
+                Clear goals and respectful collaboration work best.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
       <!-- CONTACT -->
       <section id="contact" class="py-24 lg:py-32 border-t border-line">
         <div class="site-wrap">
@@ -3822,33 +4135,32 @@
                     Chat on WhatsApp
                   </p>
                 </a>
-                <div class="flex gap-4 pt-2">
+                <div class="mt-2 space-y-3">
                   <a
                     href="https://linkedin.com/in/chaudaryahmad"
                     target="_blank"
                     rel="noopener"
-                    class="text-muted hover:text-accent transition-colors"
-                    aria-label="LinkedIn"
+                    class="block group"
                   >
-                    <i class="fab fa-linkedin-in text-lg"></i>
+                    <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-1">
+                      LinkedIn
+                    </p>
+                    <p class="text-ink font-medium group-hover:text-accent transition-colors">
+                      linkedin.com/in/chaudaryahmad
+                    </p>
                   </a>
                   <a
                     href="https://github.com/ahmadcr17dev"
                     target="_blank"
                     rel="noopener"
-                    class="text-muted hover:text-accent transition-colors"
-                    aria-label="GitHub"
+                    class="block group"
                   >
-                    <i class="fab fa-github text-lg"></i>
-                  </a>
-                  <a
-                    href="https://wa.me/923195436507"
-                    target="_blank"
-                    rel="noopener"
-                    class="text-muted hover:text-accent transition-colors"
-                    aria-label="WhatsApp"
-                  >
-                    <i class="fab fa-whatsapp text-lg"></i>
+                    <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-1">
+                      GitHub
+                    </p>
+                    <p class="text-ink font-medium group-hover:text-accent transition-colors">
+                      github.com/ahmadcr17dev
+                    </p>
                   </a>
                 </div>
               </div>
@@ -3971,9 +4283,36 @@
             Muhammad Ahmad
             <span class="text-accent">Mobeen</span>
           </p>
+          <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-5">
+            <a
+              href="https://linkedin.com/in/chaudaryahmad"
+              target="_blank"
+              rel="noopener"
+              class="text-sm font-semibold text-muted hover:text-accent transition-colors"
+              >LinkedIn</a
+            >
+            <a
+              href="https://github.com/ahmadcr17dev"
+              target="_blank"
+              rel="noopener"
+              class="text-sm font-semibold text-muted hover:text-accent transition-colors"
+              >GitHub</a
+            >
+            <a
+              href="https://wa.me/923195436507"
+              target="_blank"
+              rel="noopener"
+              class="text-sm font-semibold text-muted hover:text-accent transition-colors"
+              >WhatsApp</a
+            >
+            <a
+              href="mailto:chaudaryahmad1041@gmail.com"
+              class="text-sm font-semibold text-muted hover:text-accent transition-colors"
+              >Email</a
+            >
+          </div>
           <p class="text-sm text-muted text-center sm:text-right">
-            &copy; 2026 Muhammad Ahmad Mobeen — Software · VR · AI. Built with
-            precision, shipped with care.
+            &copy; 2026 Muhammad Ahmad Mobeen — Software · VR · AI.
           </p>
         </div>
       </footer>
@@ -4157,15 +4496,52 @@
       })();
 
 
-      // Smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach((a) => {
-        a.addEventListener("click", (e) => {
-          const t = document.querySelector(a.getAttribute("href"));
-          if (!t) return;
-          e.preventDefault();
-          t.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Soft eased scroll (replaces hard native jump/smooth)
+      (() => {
+        let animId = 0;
+
+        function easeInOutCubic(t) {
+          return t < 0.5
+            ? 4 * t * t * t
+            : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        function softScrollTo(targetY, duration) {
+          const startY = window.scrollY;
+          const dist = targetY - startY;
+          if (Math.abs(dist) < 2) return;
+          const start = performance.now();
+          cancelAnimationFrame(animId);
+
+          function frame(now) {
+            const t = Math.min(1, (now - start) / duration);
+            window.scrollTo(0, startY + dist * easeInOutCubic(t));
+            if (t < 1) animId = requestAnimationFrame(frame);
+          }
+          animId = requestAnimationFrame(frame);
+        }
+
+        function navOffset() {
+          const nav = document.getElementById("nav-bar");
+          return (nav ? nav.offsetHeight : 72) + 12;
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach((a) => {
+          a.addEventListener("click", (e) => {
+            const href = a.getAttribute("href");
+            if (!href || href === "#") return;
+            const t = document.querySelector(href);
+            if (!t) return;
+            e.preventDefault();
+            const top =
+              t.getBoundingClientRect().top + window.scrollY - navOffset();
+            const distance = Math.abs(top - window.scrollY);
+            const duration = Math.min(1400, Math.max(650, distance * 0.55));
+            softScrollTo(Math.max(0, top), duration);
+            history.pushState(null, "", href);
+          });
         });
-      });
+      })();
 
       // Case studies
       (() => {
@@ -4178,9 +4554,10 @@
             solution:
               "Built a responsive React app on Firebase for authentication and real-time data, with Tailwind UI patterns optimized for mobile shopping flows.",
             results: [
-              "Real-time product/catalogue sync via Firebase",
-              "Auth-ready customer flow on mobile and desktop",
-              "Deployed as a shareable live demo for stakeholder review",
+              "Live public demo for stakeholder walkthroughs",
+              "Real-time catalogue sync (no manual refresh for product updates)",
+              "Auth + mobile-first cart flow ready for customer use",
+              "Firebase backend — no separate server ops to maintain",
             ],
             role: "Solo full-stack / frontend engineer — UI, auth wiring, data flow, and deployment.",
             live: "https://ahmadcr17dev.github.io/freshbiteapp_Reactjs/",
@@ -4193,9 +4570,10 @@
             solution:
               "Delivered a MERN e-commerce system with product admin, cart flows, and chart-based insights — mobile-first UI on the storefront.",
             results: [
-              "End-to-end cart + product management path",
-              "Admin-friendly charts for catalogue visibility",
-              "Production deploy on Vercel for fast iteration",
+              "Production storefront live on Vercel",
+              "Cart + product admin in one MERN codebase",
+              "Chart views for catalogue / sales visibility",
+              "Mobile-first commerce UI ready for real traffic",
             ],
             role: "Full-stack engineer — API, data models, admin UX, and frontend commerce UI.",
             live: "https://urban-stich-mern.vercel.app/",
@@ -4208,9 +4586,10 @@
             solution:
               "Implemented catalogue, cart, and checkout against REST APIs, with Tailwind styling for a familiar QSR ordering experience.",
             results: [
-              "Full browse → cart → checkout loop",
-              "REST API separation for catalogue and order actions",
-              "Reusable patterns for future commerce clones",
+              "Complete browse → cart → checkout loop in production demo",
+              "REST API split for catalogue and order actions",
+              "Reusable commerce patterns for similar QSR builds",
+              "Tailwind UI tuned for fast menu browsing on mobile",
             ],
             role: "Full-stack engineer — API design, UI states, and order flow.",
             live: "https://kicksandfits.lovestoblog.com/",
@@ -4223,9 +4602,10 @@
             solution:
               "Designed an immersive VR simulator in Unity with Blender assets and Meta Quest interaction, including skill-tracking metrics for practice quality.",
             results: [
-              "Hands-on VR training loop without clinical risk",
-              "Skill metrics for measurable practice outcomes",
-              "Differentiating XR portfolio piece beyond standard web apps",
+              "Hands-on Meta Quest training loop without clinical risk",
+              "Skill-tracking metrics beyond pass/fail completion",
+              "Competition-backed immersive prototype (award context)",
+              "Clear interaction design trainees can actually follow",
             ],
             role: "VR engineer — interaction design, simulation flow, and metric framing.",
             live: "",
@@ -4293,16 +4673,17 @@
         });
       })();
 
-      // Contact form — delivers via WhatsApp + mailto (no fake success)
+      // Contact form — FormSubmit email delivery + WhatsApp backup
       document
         .getElementById("contact-form")
-        .addEventListener("submit", function (e) {
+        .addEventListener("submit", async function (e) {
           e.preventDefault();
+          const form = this;
           const btnText = document.getElementById("btn-text");
           const btnLoad = document.getElementById("btn-loading");
           const status = document.getElementById("form-status");
           const btn = document.getElementById("submit-btn");
-          const data = new FormData(this);
+          const data = new FormData(form);
           const name = String(data.get("name") || "").trim();
           const email = String(data.get("email") || "").trim();
           const project = String(data.get("project") || "").trim();
@@ -4325,33 +4706,55 @@
           btn.disabled = true;
           btnText.classList.add("hidden");
           btnLoad.classList.remove("hidden");
+          status.classList.add("hidden");
+
+          const payload = new FormData();
+          payload.append("name", name);
+          payload.append("email", email);
+          payload.append("project", project);
+          payload.append("budget", budget);
+          payload.append("message", message);
+          payload.append("_subject", "Portfolio inquiry — " + project);
+          payload.append("_template", "table");
+          payload.append("_captcha", "false");
+
+          let emailed = false;
+          try {
+            const res = await fetch(
+              "https://formsubmit.co/ajax/chaudaryahmad1041@gmail.com",
+              {
+                method: "POST",
+                headers: { Accept: "application/json" },
+                body: payload,
+              },
+            );
+            emailed = res.ok;
+          } catch (_) {
+            emailed = false;
+          }
 
           const wa =
             "https://wa.me/923195436507?text=" + encodeURIComponent(plain);
-          const mail =
-            "mailto:chaudaryahmad1041@gmail.com?subject=" +
-            encodeURIComponent("Portfolio inquiry — " + project) +
-            "&body=" +
-            encodeURIComponent(plain);
 
-          window.open(wa, "_blank", "noopener");
-          setTimeout(() => {
-            window.location.href = mail;
-          }, 250);
+          btn.disabled = false;
+          btnText.classList.remove("hidden");
+          btnLoad.classList.add("hidden");
+          status.classList.remove("hidden");
+          status.className =
+            "text-sm font-medium rounded-md px-4 py-3 text-accent border border-line";
+          status.style.background = "var(--accent-soft)";
 
-          setTimeout(() => {
-            btn.disabled = false;
-            btnText.classList.remove("hidden");
-            btnLoad.classList.add("hidden");
-            status.classList.remove("hidden");
-            status.className =
-              "text-sm font-medium rounded-md px-4 py-3 text-accent border border-line";
-            status.style.background = "var(--accent-soft)";
+          if (emailed) {
             status.textContent =
-              "Opening WhatsApp and your email app with the message. If a popup was blocked, use the WhatsApp button or email link.";
-            this.reset();
-            setTimeout(() => status.classList.add("hidden"), 7000);
-          }, 600);
+              "Message sent to my inbox. Opening WhatsApp as a backup so we can continue the chat.";
+            form.reset();
+            window.open(wa, "_blank", "noopener");
+          } else {
+            status.textContent =
+              "Email relay needs a one-time confirm from FormSubmit (check chaudaryahmad1041@gmail.com). Opening WhatsApp with your message now.";
+            window.open(wa, "_blank", "noopener");
+          }
+          setTimeout(() => status.classList.add("hidden"), 9000);
         });
     </script>
   </body>

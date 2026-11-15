@@ -13,10 +13,12 @@ Professional portfolio for **Muhammad Ahmad Mobeen** — Software Engineer spann
 - Research section (Trustworthy AI SLR + Federated IoT IDS — in progress)
 - Project case studies (FreshBite, UrbanStich, KFC Clone, LAPSSIM VR)
 - Interactive skills matrix (Frontend, Backend, AI, Cloud, VR, Tools)
-- Testimonials / social proof
+- Named client testimonials
+- How-we-work process + FAQ
 - Freelance pricing with PKR-based multi-currency switcher
-- Contact form that opens WhatsApp + email with the inquiry
-- Printable CV at `assets/Muhammad_Ahmad_Mobeen_CV.html`
+- Contact form (FormSubmit inbox + WhatsApp backup)
+- LinkedIn / GitHub surfaced in hero, nav, contact, and footer
+- Downloadable CV at `assets/Muhammad_Ahmad_Mobeen_CV.pdf`
 - Light / dark theme toggle + SVG favicon + SEO / JSON-LD
 
 Single-page site built with HTML, Tailwind CSS (CDN), and vanilla JavaScript.
@@ -29,11 +31,9 @@ Open `index.html` in a browser, or serve the folder:
 npx serve .
 ```
 
-## CV / PDF
+## CV
 
-1. Open [assets/Muhammad_Ahmad_Mobeen_CV.html](./assets/Muhammad_Ahmad_Mobeen_CV.html)
-2. Click **Print / Save PDF**
-3. Optionally replace with a designed PDF later at the same path if you prefer
+[Download CV (PDF)](./assets/Muhammad_Ahmad_Mobeen_CV.pdf)
 
 ## Contact
 
